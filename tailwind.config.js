@@ -6,7 +6,7 @@ module.exports = {
   mode: 'jit',
   theme: {
     boxShadow: {
-      lg: '0 1px 0px 16px rgba(0, 0, 0, 0.05)',
+      lg: '0 1px 16px 0px rgba(0, 0, 0, 0.05)',
     },
     colors: {
       background: 'var(--color-background)',

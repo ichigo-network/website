@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="absolute w-full">
     <div class="flex items-center p-10">
       <Logo class="h-10" />
       <nav class="flex flex-grow justify-end">
