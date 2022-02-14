@@ -22,13 +22,7 @@
 </template>
 
 <script>
-import SvgError from '~/assets/svg/error.svg?inline';
-
 export default {
-  components: {
-    SvgError,
-  },
-
   props: {
     error: {
       required: true,
