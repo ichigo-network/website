@@ -12,6 +12,16 @@ export default {
     fallback: true,
   },
 
+  // Environment variables
+  publicRuntimeConfig: {
+    link: {
+      github: 'https://github.com/ichigo-network/',
+      reddit: 'https://www.reddit.com/r/ichigonetwork',
+      telegram: 'https://t.me/ichigonetwork',
+      twitter: 'https://twitter.com/ichigonetwork',
+    },
+  },
+
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'website',

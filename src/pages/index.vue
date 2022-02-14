@@ -158,7 +158,7 @@
           "
           :key="key"
         >
-          <icon class="flex justify-center items-center w-16 h-16 border border-gray-900" />
+          <div class="flex justify-center items-center w-16 h-16 border border-gray-900" />
 
           <h2 class="py-4 text-xl">
             {{ key }}

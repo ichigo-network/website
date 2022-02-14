@@ -46,19 +46,19 @@
 
           community: {
             github: {
-              link: 'https://github.com/ichigo-network/',
+              link: $config.link.github,
               external: true,
             },
             reddit: {
-              link: 'https://www.reddit.com/r/ichigonetwork',
+              link: $config.link.reddit,
               external: true,
             },
             twitter: {
-              link: 'https://twitter.com/ichigonetwork',
+              link: $config.link.twitter,
               external: true,
             },
             telegram: {
-              link: 'https://t.me/ichigonetwork',
+              link: $config.link.telegram,
               external: true,
             },
           },

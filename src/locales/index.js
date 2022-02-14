@@ -8,12 +8,6 @@ export default {
       name: 'EN',
       file: 'en.js',
     },
-    {
-      code: 'ja',
-      iso: 'ja-JP',
-      name: 'JP',
-      file: 'ja.js',
-    },
   ],
   defaultLocale: 'en',
   seo: true,
