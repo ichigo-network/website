@@ -185,7 +185,7 @@
 
     <div class="py-24 pl-24">
       <div class="p-16 bg-primary-300">
-        <div class=" max-w-4xl">
+        <div class=" max-w-3xl">
           <UiHeading class="pb-8">
             FAQ
           </UiHeading>
