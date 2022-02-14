@@ -1,10 +1,13 @@
-const colors = require('tailwindcss/colors')
-const defaultTheme = require('tailwindcss/defaultTheme')
-const plugin = require('tailwindcss/plugin')
+const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: 'jit',
   theme: {
+    boxShadow: {
+      lg: '0 1px 0px 16px rgba(0, 0, 0, 0.05)',
+    },
     colors: {
       background: 'var(--color-background)',
       current: 'currentColor',
@@ -18,7 +21,7 @@ module.exports = {
         600: 'var(--color-gray-600)',
         700: 'var(--color-gray-700)',
         800: 'var(--color-gray-800)',
-        900: 'var(--color-gray-900)'
+        900: 'var(--color-gray-900)',
       },
       primary: {
         50: 'var(--color-primary-50)',
@@ -30,7 +33,7 @@ module.exports = {
         600: 'var(--color-primary-600)',
         700: 'var(--color-primary-700)',
         800: 'var(--color-primary-800)',
-        900: 'var(--color-primary-900)'
+        900: 'var(--color-primary-900)',
       },
       secondary: {
         50: 'var(--color-primary-50)',
@@ -42,21 +45,20 @@ module.exports = {
         600: 'var(--color-primary-600)',
         700: 'var(--color-primary-700)',
         800: 'var(--color-primary-800)',
-        900: 'var(--color-primary-900)'
+        900: 'var(--color-primary-900)',
       },
-      transparent: 'transparent'
+      transparent: 'transparent',
     },
     fontFamily: {
       sans: ['Inter', ...defaultTheme.fontFamily.sans],
       japanese: ['"M PLUS 1p"', '"ヒラギノ角ゴ ProN"', '"Hiragino Kaku Gothic ProN"', '游ゴシック', '游ゴシック体', 'yugothic', '"Yu Gothic"', 'メイリオ', 'meiryo', '"ＭＳ ゴシック"',
-        '"MS Gothic"', 'hirakakupron-w3', 'TakaoExゴシック', 'takaoexgothic', 'MotoyaLCedar', '"Droid Sans Japanese"', 'sans-serif'
-      ]
-    }
+        '"MS Gothic"', 'hirakakupron-w3', 'TakaoExゴシック', 'takaoexgothic', 'MotoyaLCedar', '"Droid Sans Japanese"', 'sans-serif',
+      ],
+    },
   },
   plugins: [
     plugin(({
       addBase,
-      addUtilities
     }) => {
       addBase({
         ':root': {
@@ -93,17 +95,17 @@ module.exports = {
           '--color-secondary-600': colors.rose['600'],
           '--color-secondary-700': colors.rose['700'],
           '--color-secondary-800': colors.rose['800'],
-          '--color-secondary-900': colors.rose['900']
-        }
-      })
-    })
+          '--color-secondary-900': colors.rose['900'],
+        },
+      });
+    }),
   ],
   purge: {
     content: [
-      './src/**/*.{vue}'
+      './src/**/*.{vue}',
     ],
     safelist: [
-      'dark-mode'
-    ]
-  }
-}
+      'dark-mode',
+    ],
+  },
+};

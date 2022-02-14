@@ -1,4 +1,4 @@
-import i18n from './src/locales' // eslint-disable-line import/no-import-module-exports
+import i18n from './src/locales'; // eslint-disable-line import/no-import-module-exports
 // import i18nEn from './src/locales/en' // eslint-disable-line import/no-import-module-exports
 
 export default {
@@ -9,24 +9,24 @@ export default {
 
   // Generate fallback pages: https://nuxtjs.org/docs/configuration-glossary/configuration-generate#fallback
   generate: {
-    fallback: true
+    fallback: true,
   },
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: 'website',
     htmlAttrs: {
-      lang: 'en'
+      lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
-      { name: 'format-detection', content: 'telephone=no' }
+      { name: 'format-detection', content: 'telephone=no' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    ],
   },
 
   loading: false,
@@ -42,22 +42,21 @@ export default {
     '@nuxtjs/stylelint-module',
     // https://go.nuxtjs.dev/tailwindcss
     '@nuxtjs/tailwindcss',
-    '@nuxtjs/svg'
+    '@nuxtjs/svg',
   ],
 
   tailwindcss: {
     configPath: '../tailwind.config.js',
-    cssPath: '@/assets/css/tailwind.css',
-    exposeConfig: false
+    exposeConfig: false,
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     ['@nuxtjs/i18n', i18n],
-    '@nuxtjs/sitemap'
+    '@nuxtjs/sitemap',
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
-  }
-}
+  },
+};
