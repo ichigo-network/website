@@ -137,35 +137,39 @@
         <div
           v-for="feature, key in {
             identityAndSecurity: {
-              icon: 'eye-close'
+              icon: 'eye-off'
             },
             flashStorage: {
-              icon: 'eye-close'
+              icon: 'flash'
             },
             socialMetadata: {
-              icon: 'eye-close'
+              icon: 'file-text'
             },
             plugAndPlay: {
-              icon: 'eye-close'
+              icon: 'plugs-connected'
             },
             advertisingMarketplace: {
-              icon: 'eye-close'
+              icon: 'volume-1'
             },
             fairIncentivesDistribution: {
-              icon: 'eye-close'
+              icon: 'money-hand'
             },
-          }
-          "
+          }"
           :key="key"
         >
-          <div class="flex justify-center items-center w-16 h-16 border border-gray-900" />
+          <div class="flex justify-center items-center w-16 h-16 border border-gray-900">
+            <UiIcon
+              :name="feature.icon"
+              size="lg"
+            />
+          </div>
 
           <h2 class="py-4 text-xl">
             {{ key }}
           </h2>
 
           <p class="font-light">
-            Asymmetric cryptography allows identities, profiles and contents to be decentralizedly secured and privatized
+            Asymmetric cryptography allows identities, profiles and contents to be decentralized, secured and privatized
           </p>
         </div>
       </div>
