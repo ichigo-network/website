@@ -1,6 +1,6 @@
 <template>
   <header class="absolute w-full">
-    <div class="flex items-center p-10">
+    <div class="flex items-center p-10 w-full bg-background">
       <Logo class="h-10" />
       <nav class="flex flex-grow justify-end">
         <ul class="flex gap-8 items-center">
