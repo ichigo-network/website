@@ -12,7 +12,7 @@
         }
       ]"
     />
-    <div class="">
+    <div>
       <slot />
     </div>
   </component>

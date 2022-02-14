@@ -1,5 +1,5 @@
 <template>
-  <footer class="p-10">
+  <footer class="p-10 border-t border-gray-50">
     <div class="flex gap-14">
       <div class="flex flex-col flex-grow gap-4">
         <Logo />
