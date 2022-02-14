@@ -179,11 +179,31 @@
       </LayoutContainer>
     </div>
 
-    <div class="py-24 pl-10">
+    <div class="py-24 pl-24">
       <div class="p-16 bg-primary-300">
-        <UiHeading>
-          FAQ
-        </UiHeading>
+        <div class=" max-w-4xl">
+          <UiHeading class="pb-8">
+            FAQ
+          </UiHeading>
+
+          <UiCollapse
+            v-for="faq in [
+              'whatIsIchigo',
+              'whatMakesTheProjectOutstanding',
+              'whatIsTargetAndVision',
+              'isProjectOpenSource',
+              'competitor',
+            ]"
+            :key="faq"
+          >
+            {{ faq }}
+            <template #content>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </template>
+          </UiCollapse>
+        </div>
       </div>
     </div>
 
