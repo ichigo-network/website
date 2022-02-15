@@ -21,6 +21,12 @@ module.exports = {
   // ecosystem
 
   ecosystem: {
+    title: 'ichigo ecosystem',
+    description: [
+      'ichigo network achieves to recreate social interactions ecosystem without the needs of a central authority and remove the powerful middle-men.',
+      'Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes.',
+      'It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actors equitably, including end-users, content creators, application providers and so on.',
+    ],
     advertisingMarketplace: 'Advertising marketplace',
     applicationLayer: 'Application layer',
     blockchain: 'Blockchain',
@@ -53,6 +59,56 @@ module.exports = {
     goHome: 'Go back home',
     notFound: 'The page you are looking for does not exist.',
     occurred: 'An error occurred.',
+  },
+
+  // faq
+
+  faq: {
+    title: 'FAQ',
+    whatIsIchigo: {
+      question: 'What is Ichigo network ?',
+      answer: 'Ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize all social media components and place human users at the center of the ecosystem, while removing the need for any intermediate or central authority.',
+    },
+    whatDifferentiateIchigo: {
+      question: 'What differentiate Ichigo Network?',
+      answer: 'Ichigo network is based on leading globally-adopted technologies : Solana blockchain and IPFS, so you know its fundamentals are solid. It is the first project to propose a fully end-to-end social ecosystem implementing all necessary components in a decentralized manner: Storage provider, Application-layer,  Advertisement Marketplace, and incentive distribution to Content Creators and End-users. Project development is steered by the community to become a completely decentralized platform with all necessary components built-in.',
+    },
+    whatIsTargetAndVision: {
+      question: 'What is your target and vision?',
+      answer: 'We envision a new social ecosystem without gatekeepers or intermediaries where no entities are able to abuse a dominant position and in which its community can finally thrive in a fair and free environment, truly making our digital world a better place.',
+    },
+    isProjectOpenSource: {
+      question: 'Is the project Open Source ?',
+      answer: 'Yes, the project is entirely open-source and its governance bound to be community-driven.',
+    },
+    whatAreUseCases: {
+      question: 'What are some use-cases?',
+      answer: 'ichigo ecosystem integrates all the bases for a social application and propose a plug-and-play system for any application to leverage its decentralized components. The application layers build on top can offer functionalities such as chat &amp; messaging, message board, image and video sharing and a rich social interaction between end-users. ',
+    },
+    whatIsIchigoToken: {
+      question: 'What is the $ICHIGO token ?',
+      answer: ' The $ICHIGO token is used to settle transactions and create monetary incentives within the ecosystem. Storage providers will receive tokens from users for storing their data. Users will receive tokens from advertisers for their engagment. Application will be able to implement different business model such as taking a part of advertiser tokens for showing their content or taking a small percentage on every user transaction. Content creators will receive tokens from users or applications for access to their content.',
+    },
+    whatWillBeTheTotalSupply: {
+      question: 'What will be the total supply ?',
+      answer: ' 76 billion',
+    },
+    whatTokenType: {
+      question: 'What will be the token type ?',
+      answer: 'Solana Token',
+    },
+    howTokenIsDistributed: {
+      question: 'How will the token be distributed ?',
+      answer: 'All tokens will be minted and offered to the public during the crowdsale. There are no private offerings and no institutional investors.The format of an initial offering and the way to invest will be announced soon.  ',
+    },
+    additionalTokens: {
+      question: 'Will there be additional tokens ?',
+      answer: 'After the initial crowdsale, total supply will be limited to 76B and additional tokens will never be minted.',
+    },
+    whyPurchaseIchigo: {
+      question: 'Why should I purchase $ICHIGO ?',
+      answer: 'You support the idea that our social interactions should not be controlled by private entities or central authorities. You want to be an early adopter of the ichigo ecosystem to enjoy its functionalities. You support the project and want to join and build the community toward this vision. ',
+    },
   },
 
   // features
@@ -97,6 +153,8 @@ module.exports = {
   index: {
     heroTitle: 'The first decentralized social ecosystem',
     heroDescription: 'ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize every social media components and place human users at the center of the ecosystem, while removing the needs for any intermediate or central authority.',
+    catchphrase: 'A new social ecosystem without gatekeepers or intermediaries where people can finally thrive in a fair digital world',
+    roadmap: 'Roadmap',
   },
 
   // links

@@ -32,7 +32,7 @@
 
     <LayoutContainer class="py-32">
       <p class="mx-auto max-w-3xl text-3xl">
-        A new social ecosystem without gatekeepers or intermediaries where people can finally thrive in a fair digital world
+        {{ $t('index.catchphrase') }}
       </p>
     </LayoutContainer>
 
@@ -40,19 +40,16 @@
     <div class="grid grid-cols-2">
       <div class="p-10">
         <div class="sticky top-10 mx-auto max-w-2xl ">
-          <UiHeading>
-            ichigo ecosystem
+          <UiHeading class="pb-4">
+            {{ $t('ecosystem.title') }}
           </UiHeading>
 
-          <p class="pt-10 text-gray-700">
-            ichigo network achieves to recreate social interactions ecosystem without the needs of a central authority and remove the powerful middle-men.
-            <br>
-            <br>
-            Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes.
-            <br>
-            <br>
-            It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actors equitably,
-            including end-users, content creators, application providers and so on.
+          <p
+            v-for="sentence, index in $t('ecosystem.description')"
+            :key="index"
+            class="pt-6 text-gray-700"
+          >
+            {{ $t('ecosystem.description[0]') }}
           </p>
         </div>
       </div>
@@ -177,33 +174,32 @@
     <div class="py-24">
       <LayoutContainer>
         <UiHeading>
-          Roadmap
+          {{ $t('index.roadmap') }}
         </UiHeading>
       </LayoutContainer>
     </div>
 
-    <div class="py-24 pl-24">
-      <div class="p-16 bg-primary-300">
+    <div class="py-24 pl-8 sm:pl-24">
+      <div class="p-10 sm:p-16 bg-primary-300">
         <div class=" max-w-3xl">
           <UiHeading class="pb-8">
-            FAQ
+            {{ $t('faq.title') }}
           </UiHeading>
 
           <UiCollapse
             v-for="faq in [
               'whatIsIchigo',
-              'whatMakesTheProjectOutstanding',
+              'whatDifferentiateIchigo',
               'whatIsTargetAndVision',
               'isProjectOpenSource',
-              'competitor',
+              'whatAreUseCases',
+              'whatWillBeTheTotalSupply',
             ]"
             :key="faq"
           >
-            {{ faq }}
+            {{ $t(`faq.${faq}.question`) }}
             <template #content>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-              nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+              {{ $t(`faq.${faq}.answer`) }}
             </template>
           </UiCollapse>
         </div>
