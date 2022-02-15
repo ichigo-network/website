@@ -4,12 +4,11 @@
       <div class="flex flex-col justify-center p-10">
         <div class="mx-auto max-w-2xl ">
           <UiHeading>
-            The first decentralized social ecosystem
+            {{ $t('index.heroTitle') }}
           </UiHeading>
 
           <p class="py-10 text-lg text-gray-500">
-            ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize every social media components
-            and place human users at the center of the ecosystem, while removing the needs for any intermediate or central authority.
+            {{ $t('index.heroDescription') }}
           </p>
 
           <div class="flex gap-6 items-center">
@@ -73,10 +72,10 @@
             layer2: {
               label: 'ichigoNodes',
               items: [
-                'User profiles',
-                'Social metadata system',
-                'Identification',
-                'Advertising marketplace',
+                'userProfiles',
+                'socialMetadataSystem',
+                'identification',
+                'advertisingMarketplace',
               ]
             },
             peerToPeerNetwork: {
@@ -107,7 +106,7 @@
         >
           <div class="mx-auto max-w-xl">
             <h2 class="pb-4 text-xl">
-              <span class="text-primary-400">{{ key }}</span> <span class="text-gray-200">/</span> {{ ecosystem.label }}
+              <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
             </h2>
 
             <div class="grid grid-cols-2 gap-2">
@@ -116,7 +115,7 @@
                 :key="item"
                 class="font-light"
               >
-                {{ item }}
+                {{ $t(`ecosystem.${item}`) }}
               </UiBullet>
             </div>
           </div>
@@ -124,16 +123,16 @@
       </div>
     </div>
 
-    <div class="grid relative grid-cols-2 py-24 px-10 bg-secondary-300">
+    <div class="md:grid relative grid-cols-2 py-24 px-10 bg-secondary-300">
       <div>
         <div class="sticky top-10 mx-auto max-w-3xl">
           <UiHeading>
-            Packed with features
+            {{ $t('features.title') }}
           </UiHeading>
         </div>
       </div>
 
-      <div class="grid grid-cols-2 gap-16">
+      <div class="grid sm:grid-cols-2 gap-16">
         <div
           v-for="feature, key in {
             identityAndSecurity: {
@@ -165,11 +164,11 @@
           </div>
 
           <h2 class="py-4 text-xl">
-            {{ key }}
+            {{ $t(`features.${key}.title`) }}
           </h2>
 
           <p class="font-light">
-            Asymmetric cryptography allows identities, profiles and contents to be decentralized, secured and privatized
+            {{ $t(`features.${key}.description`) }}
           </p>
         </div>
       </div>

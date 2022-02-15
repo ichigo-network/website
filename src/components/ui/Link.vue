@@ -10,6 +10,7 @@
     ]"
     :target="external && !target ? '_blank' : target"
     :rel="external && !rel ? 'noopener' : rel"
+    v-bind="$attrs"
   >
     <span
       v-if="external"

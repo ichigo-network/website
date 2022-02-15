@@ -1,24 +1,27 @@
 <template>
-  <LayoutContainer class="pt-48 pb-16">
-    <SvgError class="w-64 sm:w-96 h-auto" />
-    <UiTitle class="py-16">
-      <template v-if="error.statusCode === 404">
-        {{ $t('error.notFound') }}
-      </template>
+  <div class="pt-32 pl-24 h-screen">
+    <div class="p-16 h-full text-gray-50 bg-gray-900">
+      <div class=" max-w-3xl">
+        <UiHeading class="py-16">
+          <template v-if="error.statusCode === 404">
+            {{ $t('error.notFound') }}
+          </template>
 
-      <template v-else>
-        {{ $t('error.occurred') }}
-      </template>
-    </UiTitle>
+          <template v-else>
+            {{ $t('error.occurred') }}
+          </template>
+        </UiHeading>
 
-    <UiLink
-      tag="nuxt-link"
-      :to="localePath('index')"
-      class="text-lg"
-    >
-      {{ $t('error.goHome') }}
-    </UiLink>
-  </LayoutContainer>
+        <UiLink
+          tag="nuxt-link"
+          :to="localePath('index')"
+          class="text-lg"
+        >
+          {{ $t('error.goHome') }}
+        </UiLink>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -34,10 +37,6 @@ export default {
     return {
       title: this.error.statusCode,
     };
-  },
-
-  mounted() {
-    this.$store.commit('setPageTransitioning', false);
   },
 };
 </script>

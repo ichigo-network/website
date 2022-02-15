@@ -9,6 +9,7 @@
         'px-12 py-5 text-lg': size === 'lg',
       }
     ]"
+    v-bind="$attrs"
   >
     <slot />
   </component>
