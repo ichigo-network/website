@@ -164,7 +164,7 @@
             {{ $t(`features.${key}.title`) }}
           </h2>
 
-          <p class="font-light">
+          <p class="max-w-md font-light">
             {{ $t(`features.${key}.description`) }}
           </p>
         </div>
@@ -179,7 +179,7 @@
       </LayoutContainer>
       <div class="grid grid-cols-10 pt-16">
         <div class="pt-20">
-          <div class="flex-grow -mt-px h-px bg-gradient-to-l from-primary-500" />
+          <div class="flex-grow -mt-px h-px bg-gradient-to-l from-primary-300" />
         </div>
 
         <div
@@ -203,14 +203,19 @@
           <div class="flex items-center py-4">
             <div
               :class="[
-                'flex-shrink-0 w-6 h-6 rounded-full border',
+                'flex-shrink-0 w-6 h-6 rounded-full relative',
                 {
-                  'bg-primary-300 border-primary-300': step.status === 'completed',
-                  'bg-secondary-300 border-secondary-300': step.status === 'active',
-                  'bg-background border-gray-200': step.status === 'pending',
+                  'bg-primary-300': step.status === 'completed',
+                  'bg-secondary-300': step.status === 'active',
+                  'bg-background border border-gray-200': step.status === 'pending',
                 }
               ]"
-            />
+            >
+              <div
+                v-if="step.status === 'active'"
+                class="absolute w-full h-full bg-secondary-300 rounded-full opacity-75 animate-ping"
+              />
+            </div>
             <div
               :class="[
                 'flex-grow h-px',
@@ -222,7 +227,7 @@
             />
           </div>
 
-          <ul class="pr-4 pl-2 space-y-2">
+          <ul class="pr-4 pl-2 space-y-2 max-w-md">
             <li
               v-for="action in $t(`index.roadmap.${period}.actions`)"
               :key="action"
