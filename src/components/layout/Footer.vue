@@ -67,7 +67,7 @@
         class="flex flex-col gap-6"
       >
         <li class="text-gray-500">
-          {{ sectionKey }}
+          {{ $t(`links.${sectionKey}`) }}
         </li>
 
         <li
@@ -80,18 +80,18 @@
             :href="item.link"
             external
           >
-            {{ key }}
+            {{ $t(`links.${key}`) }}
           </UiLink>
 
           <template v-else-if="!item.link && !item.page">
-            {{ key }}
+            {{ $t(`links.${key}`) }}
             <UiTag size="sm">
               Soon
             </UiTag>
           </template>
 
           <template v-else>
-            {{ key }}
+            {{ $t(`links.${key}`) }}
           </template>
         </li>
       </ul>

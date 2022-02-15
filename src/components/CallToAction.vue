@@ -8,11 +8,11 @@
       <UiButton
         size="lg"
       >
-        Get started
+        {{ $t('common.getStarted') }}
       </UiButton>
 
       <UiLink class="text-lg">
-        Read whitepaper
+        {{ $t('common.readWhitepaper') }}
       </UiLink>
     </div>
   </div>

@@ -8,12 +8,12 @@
             v-for="item in ['discover', 'use', 'develop', 'mine', 'community']"
             :key="item"
           >
-            {{ item }}
+            {{ $t(`links.${item}`) }}
           </li>
 
           <li>
             <UiButton>
-              Get started
+              {{ $t('common.getStarted') }}
             </UiButton>
           </li>
         </ul>
