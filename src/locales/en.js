@@ -6,11 +6,16 @@ module.exports = {
     keywords: 'web3',
   },
 
+  callToAction: {
+    title: 'Join ichigo network and start the first decentralized social ecosystem',
+  },
+
   // common
 
   common: {
     getStarted: 'Get started',
     readWhitepaper: 'Read whitepaper',
+    soon: 'Soon',
   },
 
   // ecosystem
@@ -45,9 +50,9 @@ module.exports = {
   // error
 
   error: {
+    goHome: 'Go back home',
     notFound: 'The page you are looking for does not exist.',
     occurred: 'An error occurred.',
-    goHome: 'Go back home',
   },
 
   // features
@@ -60,7 +65,7 @@ module.exports = {
     },
     fairIncentivesDistribution: {
       title: 'Fair incentives distribution',
-      description: 'All incentives are equitably distribusted to every actor based on their engagments and contributions',
+      description: 'All incentives are equitably distributed to every actor based on their engagements and contributions',
     },
     flashStorage: {
       title: 'Flash storage',
@@ -78,6 +83,13 @@ module.exports = {
       title: 'Social metadata',
       description: 'Provide identity and content\'s metadata such as profile information, likes, subscriptions, comments, etc',
     },
+  },
+
+  // footer
+
+  footer: {
+    license: 'Non-exclusive community {year}, ichigo network.',
+    rights: 'All rights publicly available.',
   },
 
   // index

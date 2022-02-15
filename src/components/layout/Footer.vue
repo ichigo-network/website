@@ -1,13 +1,13 @@
 <template>
   <footer class="py-24 px-10 border-t border-gray-50">
-    <div class="flex gap-14">
+    <div class="flex flex-col sm:flex-row gap-14">
       <div class="flex flex-col flex-grow gap-4">
         <Logo />
 
         <p class="flex flex-grow items-end text-sm text-gray-500">
-          Non-exclusive community 2022, ichigo network.
+          {{ $t('footer.license', { year: new Date().getFullYear() }) }}
           <br>
-          All rights publicly available.
+          {{ $t('footer.rights') }}
         </p>
       </div>
 
@@ -64,9 +64,9 @@
           },
         }"
         :key="sectionKey"
-        class="flex flex-col gap-6"
+        class="grid sm:flex sm:flex-col grid-cols-2 gap-6"
       >
-        <li class="text-gray-500">
+        <li class="col-span-2 text-gray-500">
           {{ $t(`links.${sectionKey}`) }}
         </li>
 
@@ -86,7 +86,7 @@
           <template v-else-if="!item.link && !item.page">
             {{ $t(`links.${key}`) }}
             <UiTag size="sm">
-              Soon
+              {{ $t('common.soon') }}
             </UiTag>
           </template>
 
