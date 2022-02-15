@@ -1,5 +1,5 @@
 import i18n from './src/locales'; // eslint-disable-line import/no-import-module-exports
-// import i18nEn from './src/locales/en' // eslint-disable-line import/no-import-module-exports
+import i18nEn from './src/locales/en'; // eslint-disable-line import/no-import-module-exports
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
@@ -10,6 +10,10 @@ export default {
   // Generate fallback pages: https://nuxtjs.org/docs/configuration-glossary/configuration-generate#fallback
   generate: {
     fallback: true,
+  },
+
+  server: {
+    host: '0.0.0.0',
   },
 
   // Environment variables
@@ -24,15 +28,18 @@ export default {
 
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'website',
+    title: i18nEn.head.title,
+    titleTemplate: `%s — ${i18nEn.head.title}`,
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
       { name: 'format-detection', content: 'telephone=no' },
+      { name: 'author', content: i18nEn.head.title },
+      { name: 'description', content: i18nEn.head.description },
+      { name: 'keywords', content: i18nEn.head.keywords },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
