@@ -154,7 +154,47 @@ module.exports = {
     heroTitle: 'The first decentralized social ecosystem',
     heroDescription: 'ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize every social media components and place human users at the center of the ecosystem, while removing the needs for any intermediate or central authority.',
     catchphrase: 'A new social ecosystem without gatekeepers or intermediaries where people can finally thrive in a fair digital world',
-    roadmap: 'Roadmap',
+    roadmap: {
+      title: 'Roadmap',
+      '2021 Q1 - 2022 Q1': {
+        title: 'POC',
+        actions: [
+          'Architecture Conception',
+          'Implementation Design',
+          'Prototyping and Testing',
+          'Release of Node v0 (testnet)',
+          'Deployment of Testnet (based on Solana Devnet)',
+          'Release of testnet\'s sample application layer (Sandbox)',
+        ],
+      },
+      '2022 Q2 - 2022 Q3': {
+        title: 'POC',
+        actions: [
+          'Community Building',
+          'Launch of $ICHIGO token',
+          'Development Node v1 (production MVP)',
+          'Production readiness for wallet and JS-SDK',
+        ],
+      },
+      '2022 Q3 - 2022 Q4': {
+        title: 'Core product',
+        actions: [
+          'Release of Node v1',
+          'Launch of Mainnet',
+          'Release of decentralized advertisement marketplace',
+          'Release of production application layer sample app',
+        ],
+      },
+      '2023 Q1': {
+        title: 'Expansion',
+        actions: [
+          'Release of mobile app & SDK',
+          'Community driven governance',
+          'Many more functionalities under community direction (social meta, pub-sub, video, live streaming, metaverse enabling, etc.)',
+          'Third-party contribution',
+        ],
+      },
+    },
   },
 
   // links

@@ -49,7 +49,7 @@
             :key="index"
             class="pt-6 text-gray-700"
           >
-            {{ $t('ecosystem.description[0]') }}
+            {{ sentence }}
           </p>
         </div>
       </div>
@@ -174,9 +174,69 @@
     <div class="py-24">
       <LayoutContainer>
         <UiHeading>
-          {{ $t('index.roadmap') }}
+          {{ $t('index.roadmap.title') }}
         </UiHeading>
       </LayoutContainer>
+      <div class="grid grid-cols-10 pt-16">
+        <div class="pt-20">
+          <div class="flex-grow -mt-px h-px bg-gradient-to-l from-primary-500" />
+        </div>
+
+        <div
+          v-for="step, period in {
+            '2021 Q1 - 2022 Q1': { status: 'completed' },
+            '2022 Q2 - 2022 Q3': { status: 'active' },
+            '2022 Q3 - 2022 Q4': { status: 'pending' },
+            '2023 Q1': { status: 'pending' },
+          }"
+          :key="period"
+          class="col-span-2 last:col-span-3"
+        >
+          <h2 class="text-xl">
+            {{ $t(`index.roadmap.${period}.title`) }}
+          </h2>
+
+          <div class="font-light">
+            {{ period }}
+          </div>
+
+          <div class="flex items-center py-4">
+            <div
+              :class="[
+                'flex-shrink-0 w-6 h-6 rounded-full border',
+                {
+                  'bg-primary-300 border-primary-300': step.status === 'completed',
+                  'bg-secondary-300 border-secondary-300': step.status === 'active',
+                  'bg-background border-gray-200': step.status === 'pending',
+                }
+              ]"
+            />
+            <div
+              :class="[
+                'flex-grow h-px',
+                {
+                  'bg-primary-300': step.status === 'completed',
+                  'bg-gray-200': step.status !== 'completed',
+                }
+              ]"
+            />
+          </div>
+
+          <ul class="pr-4 pl-2 space-y-2">
+            <li
+              v-for="action in $t(`index.roadmap.${period}.actions`)"
+              :key="action"
+            >
+              <UiBullet
+                :status="step.status"
+                class="font-light"
+              >
+                {{ action }}
+              </UiBullet>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
 
     <div class="py-24 pl-8 sm:pl-24">
