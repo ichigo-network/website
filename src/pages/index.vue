@@ -177,9 +177,10 @@
           {{ $t('index.roadmap.title') }}
         </UiHeading>
       </LayoutContainer>
-      <div class="grid grid-cols-10 pt-16">
-        <div class="pt-20">
-          <div class="flex-grow -mt-px h-px bg-gradient-to-l from-primary-300" />
+
+      <div class="grid grid-cols-1 lg:grid-cols-10 px-10 lg:px-0 pt-16">
+        <div class="px-3 lg:pt-20">
+          <div class="lg:flex-grow lg:-mt-px w-px h-20 lg:h-px bg-gradient-to-t lg:bg-gradient-to-l from-primary-300" />
         </div>
 
         <div
@@ -187,20 +188,34 @@
             '2021 Q1 - 2022 Q1': { status: 'completed' },
             '2022 Q2 - 2022 Q3': { status: 'active' },
             '2022 Q3 - 2022 Q4': { status: 'pending' },
-            '2023 Q1': { status: 'pending' },
+            '2023 Q1': { status: 'pending', last: true },
           }"
           :key="period"
-          class="col-span-2 last:col-span-3"
+          class="lg:col-span-2 lg:last:col-span-3"
         >
-          <h2 class="text-xl">
-            {{ $t(`index.roadmap.${period}.title`) }}
-          </h2>
+          <div class="flex gap-4">
+            <div
+              :class="[
+                'lg:hidden flex-shrink-0 self-stretch mx-3 w-px bg-primary-300',
+                {
+                  'bg-primary-300': step.status === 'completed',
+                  'bg-gray-200': step.status === 'pending',
+                },
+              ]"
+            />
 
-          <div class="font-light">
-            {{ period }}
+            <div class="-mb-9 lg:mb-0">
+              <h2 class="text-xl">
+                {{ $t(`index.roadmap.${period}.title`) }}
+              </h2>
+
+              <div class="font-light">
+                {{ period }}
+              </div>
+            </div>
           </div>
 
-          <div class="flex items-center py-4">
+          <div class="flex items-center lg:py-4">
             <div
               :class="[
                 'flex-shrink-0 w-6 h-6 rounded-full relative flex items-center justify-center',
@@ -227,9 +242,10 @@
                 class="absolute w-full h-full bg-secondary-300 rounded-full opacity-50 animate-ping"
               />
             </div>
+
             <div
               :class="[
-                'flex-grow h-px',
+                'hidden lg:block flex-grow h-px',
                 {
                   'bg-primary-300': step.status === 'completed',
                   'bg-gray-200': step.status !== 'completed',
@@ -238,50 +254,63 @@
             />
           </div>
 
-          <ul class="pr-4 pl-2 space-y-2 max-w-md">
-            <li
-              v-for="action in $t(`index.roadmap.${period}.actions`)"
-              :key="action"
-            >
-              <UiBullet
-                :status="step.status"
-                class="font-light"
+          <div class="flex gap-3">
+            <div
+              :class="[
+                'lg:hidden flex-shrink-0 self-stretch mx-3 w-px',
+                {
+                  'bg-primary-300': step.status === 'completed',
+                  'bg-gray-200': !step.last && step.status !== 'completed',
+                  'bg-gradient-to-b from-gray-200': step.last,
+                },
+              ]"
+            />
+
+            <ul class="pt-6 lg:pt-0 pr-4 pb-16 lg:pb-0 pl-2 space-y-2 max-w-md">
+              <li
+                v-for="action in $t(`index.roadmap.${period}.actions`)"
+                :key="action"
               >
-                {{ action }}
-              </UiBullet>
-            </li>
-          </ul>
+                <UiBullet
+                  :status="step.status"
+                  class="font-light"
+                >
+                  {{ action }}
+                </UiBullet>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
 
-    <div class="py-24 pl-8 sm:pl-24">
-      <div class="p-10 sm:p-16 bg-primary-300">
-        <div class=" max-w-3xl">
-          <UiHeading class="pb-8">
-            {{ $t('faq.title') }}
-          </UiHeading>
+      <div class="py-24 pl-8 sm:pl-24">
+        <div class="p-10 sm:p-16 bg-primary-300">
+          <div class=" max-w-3xl">
+            <UiHeading class="pb-8">
+              {{ $t('faq.title') }}
+            </UiHeading>
 
-          <UiCollapse
-            v-for="faq in [
-              'whatIsIchigo',
-              'whatDifferentiateIchigo',
-              'whatIsTargetAndVision',
-              'isProjectOpenSource',
-              'whatAreUseCases',
-              'whatWillBeTheTotalSupply',
-            ]"
-            :key="faq"
-          >
-            {{ $t(`faq.${faq}.question`) }}
-            <template #content>
-              {{ $t(`faq.${faq}.answer`) }}
-            </template>
-          </UiCollapse>
+            <UiCollapse
+              v-for="faq in [
+                'whatIsIchigo',
+                'whatDifferentiateIchigo',
+                'whatIsTargetAndVision',
+                'isProjectOpenSource',
+                'whatAreUseCases',
+                'whatWillBeTheTotalSupply',
+              ]"
+              :key="faq"
+            >
+              {{ $t(`faq.${faq}.question`) }}
+              <template #content>
+                {{ $t(`faq.${faq}.answer`) }}
+              </template>
+            </UiCollapse>
+          </div>
         </div>
       </div>
-    </div>
 
-    <CallToAction />
+      <CallToAction />
+    </div>
   </div>
 </template>
