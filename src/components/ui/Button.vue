@@ -6,7 +6,7 @@
       transition-colors active:bg-primary-300`,
       {
         'px-4 py-2.5': size === 'base',
-        'px-12 py-5 text-lg': size === 'lg',
+        'px-6 py-3 sm:px-12 sm:py-5 text-lg': size === 'lg',
       }
     ]"
     v-bind="$attrs"

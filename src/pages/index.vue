@@ -1,7 +1,7 @@
 <template>
   <div>
-    <div class="grid grid-cols-2 pt-32 h-screen">
-      <div class="flex flex-col justify-center p-10">
+    <div class="grid lg:grid-cols-2 pt-28 sm:pt-32 h-screen">
+      <div class="flex flex-col order-2 sm:order-1 justify-center p-10">
         <div class="mx-auto max-w-2xl ">
           <UiHeading>
             {{ $t('index.heroTitle') }}
@@ -25,8 +25,10 @@
         </div>
       </div>
 
-      <div class="bg-gray-900">
-        image
+      <div class="order-1 sm:order-2 px-4 sm:px-0">
+        <div class="h-48 sm:h-full bg-gray-900">
+          image
+        </div>
       </div>
     </div>
 
@@ -37,7 +39,7 @@
     </LayoutContainer>
 
     <div class="h-px bg-gray-900" />
-    <div class="grid grid-cols-2">
+    <div class="grid lg:grid-cols-2">
       <div class="p-10">
         <div class="sticky top-10 mx-auto max-w-2xl ">
           <UiHeading class="pb-4">

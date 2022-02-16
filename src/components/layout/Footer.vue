@@ -1,5 +1,5 @@
 <template>
-  <footer class="py-24 px-10 border-t border-gray-50">
+  <footer class="py-24 px-4 sm:px-10 border-t border-gray-50">
     <div class="flex flex-col sm:flex-row gap-14">
       <div class="flex flex-col flex-grow gap-4">
         <Logo />
@@ -64,7 +64,7 @@
           },
         }"
         :key="sectionKey"
-        class="grid sm:flex sm:flex-col grid-cols-2 gap-6"
+        class="grid sm:flex sm:flex-col grid-cols-2 gap-4 sm:gap-6"
       >
         <li class="col-span-2 text-gray-500">
           {{ $t(`links.${sectionKey}`) }}
