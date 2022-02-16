@@ -168,7 +168,7 @@ module.exports = {
         ],
       },
       '2022 Q2 - 2022 Q3': {
-        title: 'POC',
+        title: 'Pre-production',
         actions: [
           'Community Building',
           'Launch of $ICHIGO token',

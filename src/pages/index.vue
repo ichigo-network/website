@@ -203,7 +203,7 @@
           <div class="flex items-center py-4">
             <div
               :class="[
-                'flex-shrink-0 w-6 h-6 rounded-full relative',
+                'flex-shrink-0 w-6 h-6 rounded-full relative flex items-center justify-center',
                 {
                   'bg-primary-300': step.status === 'completed',
                   'bg-secondary-300': step.status === 'active',
@@ -212,8 +212,19 @@
               ]"
             >
               <div
+                v-if="['active', 'completed'].includes(step.status)"
+                :class="[
+                  'w-2 h-2 rounded-full',
+                  {
+                    'bg-primary-400': step.status === 'completed',
+                    'bg-secondary-400': step.status === 'active',
+                  }
+                ]"
+              />
+
+              <div
                 v-if="step.status === 'active'"
-                class="absolute w-full h-full bg-secondary-300 rounded-full opacity-75 animate-ping"
+                class="absolute w-full h-full bg-secondary-300 rounded-full opacity-50 animate-ping"
               />
             </div>
             <div
