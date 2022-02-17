@@ -18,12 +18,64 @@
             : 'invisible ease-out-mijin duration-150 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
-        <ul class="flex flex-col lg:flex-row gap-8 lg:items-center p-6 lg:p-0 border-b lg:border-b-0 border-gray-900">
+        <ul class="flex flex-col lg:flex-row lg:items-center p-6 lg:p-0 border-b lg:border-b-0 border-gray-900">
           <li
-            v-for="item in ['discover', 'use', 'develop', 'mine', 'community']"
-            :key="item"
+            v-for="section, sectionKey in $config.nav"
+            :key="sectionKey"
           >
-            {{ $t(`links.${item}`) }}
+            <div
+              v-if="Object.keys(section)"
+              class="group relative"
+            >
+              <button class="py-2 lg:px-6">
+                {{ $t(`links.${sectionKey}`) }}
+              </button>
+
+              <ul class="lg:absolute group-hover:visible lg:invisible lg:z-10 lg:p-4 space-y-1 w-56 lg:bg-background lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
+                <li
+                  v-for="item, key in section"
+                  :key="key"
+                >
+                  <UiLink
+                    v-if="item.link"
+                    :href="item.link"
+                    external
+                    :class="[
+                      'p-2 rounded w-full',
+                      {
+                        'hover:bg-gray-50': item.link || item.page,
+                      }
+                    ]"
+                  >
+                    {{ $t(`links.${key}`) }}
+                  </UiLink>
+
+                  <UiLink
+                    v-else-if="item.page"
+                    tag="nuxt-link"
+                    :to="localePath(item.page)"
+                    :class="[
+                      'p-2 rounded w-full',
+                      {
+                        'hover:bg-gray-50': item.link || item.page,
+                      }
+                    ]"
+                  >
+                    {{ $t(`links.${key}`) }}
+                  </UiLink>
+
+                  <div
+                    v-else
+                    class="p-2"
+                  >
+                    {{ $t(`links.${key}`) }}
+                    <UiTag size="sm">
+                      {{ $t('common.soon') }}
+                    </UiTag>
+                  </div>
+                </li>
+              </ul>
+            </div>
           </li>
 
           <li class="hidden lg:block">

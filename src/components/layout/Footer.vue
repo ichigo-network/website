@@ -12,60 +12,7 @@
       </div>
 
       <ul
-        v-for="section, sectionKey in {
-          use: {
-            ichigoCrowdsale: {
-              page: 'crowdsale'
-            },
-            ichigoWallet: {
-              page: 'wallet'
-            },
-            sandbox: {
-              page: 'sandbox'
-            },
-            tokenFaucet: {
-              page: 'token-faucet'
-            },
-            faq: {
-              page: 'faq'
-            },
-          },
-
-          develop: {
-            documentation: {
-            },
-            sdk: {
-            },
-          },
-
-          mine: {
-            provideStorage: {
-            },
-            becomeValidator: {
-            },
-            stakeIchigo: {
-            },
-          },
-
-          community: {
-            github: {
-              link: $config.link.github,
-              external: true,
-            },
-            reddit: {
-              link: $config.link.reddit,
-              external: true,
-            },
-            twitter: {
-              link: $config.link.twitter,
-              external: true,
-            },
-            telegram: {
-              link: $config.link.telegram,
-              external: true,
-            },
-          },
-        }"
+        v-for="section, sectionKey in $config.nav"
         :key="sectionKey"
         class="grid sm:flex sm:flex-col grid-cols-2 gap-4 sm:gap-6"
       >
@@ -86,20 +33,19 @@
             {{ $t(`links.${key}`) }}
           </UiLink>
 
-          <template v-else-if="!item.link && !item.page">
+          <UiLink
+            v-else-if="item.page"
+            tag="nuxt-link"
+            :to="localePath(item.page)"
+          >
+            {{ $t(`links.${key}`) }}
+          </UiLink>
+
+          <template v-else>
             {{ $t(`links.${key}`) }}
             <UiTag size="sm">
               {{ $t('common.soon') }}
             </UiTag>
-          </template>
-
-          <template v-else>
-            <UiLink
-              tag="nuxt-link"
-              :to="localePath(item.page)"
-            >
-              {{ $t(`links.${key}`) }}
-            </UiLink>
           </template>
         </li>
       </ul>

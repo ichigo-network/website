@@ -18,6 +18,52 @@ export default {
 
   // Environment variables
   publicRuntimeConfig: {
+    nav: {
+      use: {
+        ichigoCrowdsale: {
+          page: 'crowdsale',
+        },
+        ichigoWallet: {
+          page: 'wallet',
+        },
+        sandbox: {
+          page: 'sandbox',
+        },
+        tokenFaucet: {
+          page: 'token-faucet',
+        },
+        faq: {
+          page: 'faq',
+        },
+      },
+      develop: {
+        documentation: {},
+        sdk: {},
+      },
+      mine: {
+        provideStorage: {},
+        becomeValidator: {},
+        stakeIchigo: {},
+      },
+      community: {
+        github: {
+          link: 'https://github.com/ichigo-network/',
+          external: true,
+        },
+        reddit: {
+          link: 'https://www.reddit.com/r/ichigonetwork',
+          external: true,
+        },
+        twitter: {
+          link: 'https://t.me/ichigonetwork',
+          external: true,
+        },
+        telegram: {
+          link: 'https://twitter.com/ichigonetwork',
+          external: true,
+        },
+      },
+    },
     link: {
       github: 'https://github.com/ichigo-network/',
       reddit: 'https://www.reddit.com/r/ichigonetwork',
