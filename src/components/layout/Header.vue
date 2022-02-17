@@ -12,9 +12,9 @@
       </div>
       <nav
         :class="[
-          'block lg:flex absolute lg:static inset-x-0 top-20 w-full lg:w-auto bg-background lg:visible lg:opacity-100 z-40',
+          'block lg:flex overflow-y-auto lg:overflow-y-visible bg-background fixed lg:static inset-0 top-20 w-full lg:w-auto lg:visible lg:opacity-100 z-40',
           isNavOpen
-            ? 'visible duration-500 opacity-100 translate-y-0'
+            ? 'visible duration-300 opacity-100 translate-y-0'
             : 'invisible ease-out-mijin duration-150 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
@@ -27,9 +27,9 @@
               v-if="Object.keys(section)"
               class="group relative"
             >
-              <button class="py-2 lg:px-6">
+              <div class="py-2 lg:px-6">
                 {{ $t(`links.${sectionKey}`) }}
-              </button>
+              </div>
 
               <ul class="lg:absolute group-hover:visible lg:invisible lg:z-10 lg:p-4 space-y-1 w-56 lg:bg-background lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
                 <li
