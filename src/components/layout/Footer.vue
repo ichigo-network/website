@@ -26,6 +26,9 @@
             tokenFaucet: {
               page: 'token-faucet'
             },
+            faq: {
+              page: 'faq'
+            },
           },
 
           develop: {
@@ -91,7 +94,12 @@
           </template>
 
           <template v-else>
-            {{ $t(`links.${key}`) }}
+            <UiLink
+              tag="nuxt-link"
+              :to="localePath(item.page)"
+            >
+              {{ $t(`links.${key}`) }}
+            </UiLink>
           </template>
         </li>
       </ul>

@@ -106,7 +106,14 @@
                 <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
               </h2>
 
-              <div class="grid grid-cols-2 gap-2">
+              <div
+                :class="[
+                  {
+                    'grid grid-cols-2 gap-2': ecosystem.items.length > 1
+                  },
+                ]
+                "
+              >
                 <UiBullet
                   v-for="item in ecosystem.items"
                   :key="item"
@@ -307,11 +314,20 @@
               ]"
               :key="faq"
             >
-              {{ $t(`faq.${faq}.question`) }}
+              {{ $t(`faq.items.${faq}.question`) }}
               <template #content>
-                {{ $t(`faq.${faq}.answer`) }}
+                {{ $t(`faq.items.${faq}.answer`) }}
               </template>
             </UiCollapse>
+
+            <div class="pt-10 text-right">
+              <UiLink
+                tag="nuxt-link"
+                :to="localePath('faq')"
+              >
+                {{ $t('common.viewAll') }}
+              </UiLink>
+            </div>
           </div>
         </div>
       </div>
