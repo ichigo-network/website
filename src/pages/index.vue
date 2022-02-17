@@ -34,7 +34,8 @@
       </p>
     </LayoutContainer>
 
-    <div class="h-px bg-gray-900" />
+    <UiDivider />
+
     <div class="grid lg:grid-cols-2">
       <div class="p-10">
         <div class="sticky top-10 mx-auto max-w-2xl ">
@@ -92,28 +93,32 @@
               items: [
                 'contentCreationAndEngagement',
                 'humanAuthorityEngagement',
-              ]
+              ],
+              last: true,
             },
           }
           "
           :key="key"
-          class="p-10 border-b last:border-b-0 border-l border-gray-900"
         >
-          <div class="mx-auto max-w-xl">
-            <h2 class="pb-4 text-xl">
-              <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
-            </h2>
+          <div class="p-10 border-l border-gray-900">
+            <div class="mx-auto max-w-xl">
+              <h2 class="pb-4 text-xl">
+                <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
+              </h2>
 
-            <div class="grid grid-cols-2 gap-2">
-              <UiBullet
-                v-for="item in ecosystem.items"
-                :key="item"
-                class="font-light"
-              >
-                {{ $t(`ecosystem.${item}`) }}
-              </UiBullet>
+              <div class="grid grid-cols-2 gap-2">
+                <UiBullet
+                  v-for="item in ecosystem.items"
+                  :key="item"
+                  class="font-light"
+                >
+                  {{ $t(`ecosystem.${item}`) }}
+                </UiBullet>
+              </div>
             </div>
           </div>
+
+          <UiDivider v-if="!ecosystem.last" />
         </div>
       </div>
     </div>

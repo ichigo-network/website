@@ -15,7 +15,7 @@
           'block lg:flex absolute lg:static inset-x-0 top-20 w-full lg:w-auto bg-background lg:visible lg:opacity-100 z-40',
           isNavOpen
             ? 'visible duration-500 opacity-100 translate-y-0'
-            : 'invisible ease-out-mijin duration-500 opacity-0 -translate-y-4 lg:translate-y-0',
+            : 'invisible ease-out-mijin duration-150 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
         <ul class="flex flex-col lg:flex-row gap-8 lg:items-center p-6 lg:p-0 border-b lg:border-b-0 border-gray-900">
@@ -68,10 +68,8 @@ export default {
     Logo,
   },
 
-  data() {
-    return {
-      isNavOpen: false,
-    };
-  },
+  data: () => ({
+    isNavOpen: false,
+  }),
 };
 </script>
