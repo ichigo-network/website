@@ -12,9 +12,7 @@
           </p>
 
           <div class="flex gap-6 items-center">
-            <UiButton
-              size="lg"
-            >
+            <UiButton size="lg">
               {{ $t('common.getStarted') }}
             </UiButton>
 
@@ -26,9 +24,7 @@
       </div>
 
       <div class="order-1 sm:order-2 px-4 sm:px-0">
-        <div class="h-48 sm:h-full bg-gray-900">
-          image
-        </div>
+        <div class="h-48 sm:h-full bg-gray-900" />
       </div>
     </div>
 

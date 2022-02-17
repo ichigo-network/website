@@ -14,6 +14,7 @@ module.exports = {
 
   common: {
     getStarted: 'Get started',
+    menu: 'Menu',
     readWhitepaper: 'Read whitepaper',
     soon: 'Soon',
   },
@@ -87,7 +88,7 @@ module.exports = {
     },
     whatIsIchigoToken: {
       question: 'What is the $ICHIGO token ?',
-      answer: ' The $ICHIGO token is used to settle transactions and create monetary incentives within the ecosystem. Storage providers will receive tokens from users for storing their data. Users will receive tokens from advertisers for their engagment. Application will be able to implement different business model such as taking a part of advertiser tokens for showing their content or taking a small percentage on every user transaction. Content creators will receive tokens from users or applications for access to their content.',
+      answer: ' The $ICHIGO token is used to settle transactions and create monetary incentives within the ecosystem. Storage providers will receive tokens from users for storing their data. Users will receive tokens from advertisers for their engagement. Application will be able to implement different business model such as taking a part of advertiser tokens for showing their content or taking a small percentage on every user transaction. Content creators will receive tokens from users or applications for access to their content.',
     },
     whatWillBeTheTotalSupply: {
       question: 'What will be the total supply ?',
