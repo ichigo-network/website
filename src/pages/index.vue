@@ -36,7 +36,7 @@
 
     <UiDivider />
 
-    <div class="grid lg:grid-cols-2">
+    <div class="grid lg:grid-cols-2 pb-10 lg:pb-0">
       <div class="p-10">
         <div class="sticky top-10 mx-auto max-w-2xl ">
           <UiHeading class="pb-4">
@@ -53,7 +53,7 @@
         </div>
       </div>
 
-      <div>
+      <div class="mx-4 lg:mx-0 border lg:border-0 border-gray-900">
         <div
           v-for="ecosystem, key in {
             blockchain: {
@@ -100,7 +100,7 @@
           "
           :key="key"
         >
-          <div class="p-10 border-l border-gray-900">
+          <div class="p-4 lg:p-10 border-l-0 lg:border-l border-gray-900">
             <div class="mx-auto max-w-xl">
               <h2 class="pb-4 text-xl">
                 <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
@@ -123,9 +123,9 @@
       </div>
     </div>
 
-    <div class="md:grid relative grid-cols-2 py-24 px-10 bg-secondary-300">
+    <div class="lg:grid relative grid-cols-2 py-24 px-4 lg:px-10 bg-secondary-300">
       <div>
-        <div class="sticky top-10 mx-auto max-w-3xl">
+        <div class="sticky top-10 pb-16 mx-auto max-w-3xl">
           <UiHeading>
             {{ $t('features.title') }}
           </UiHeading>
@@ -155,21 +155,24 @@
             },
           }"
           :key="key"
+          class="flex lg:flex-col gap-4"
         >
-          <div class="flex justify-center items-center w-16 h-16 border border-gray-900">
+          <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-gray-900">
             <UiIcon
               :name="feature.icon"
               size="lg"
             />
           </div>
 
-          <h2 class="py-4 text-xl">
-            {{ $t(`features.${key}.title`) }}
-          </h2>
+          <div>
+            <h2 class="pb-4 text-xl">
+              {{ $t(`features.${key}.title`) }}
+            </h2>
 
-          <p class="max-w-md font-light">
-            {{ $t(`features.${key}.description`) }}
-          </p>
+            <p class="max-w-md font-light">
+              {{ $t(`features.${key}.description`) }}
+            </p>
+          </div>
         </div>
       </div>
     </div>
@@ -181,7 +184,7 @@
         </UiHeading>
       </LayoutContainer>
 
-      <div class="grid grid-cols-1 lg:grid-cols-10 px-10 lg:px-0 pt-16">
+      <div class="grid grid-cols-1 lg:grid-cols-10 px-10 lg:px-0 pt-4 lg:pt-16">
         <div class="px-3 lg:pt-20">
           <div class="lg:flex-grow lg:-mt-px w-px h-20 lg:h-px bg-gradient-to-t lg:bg-gradient-to-l from-primary-300" />
         </div>
@@ -286,9 +289,9 @@
         </div>
       </div>
 
-      <div class="py-24 pl-8 sm:pl-24">
-        <div class="p-10 sm:p-16 bg-primary-300">
-          <div class=" max-w-3xl">
+      <div class="py-24 pr-4 sm:pr-0 pl-4 sm:pl-24">
+        <div class="p-6 sm:p-16 bg-primary-300">
+          <div class="max-w-3xl">
             <UiHeading class="pb-8">
               {{ $t('faq.title') }}
             </UiHeading>

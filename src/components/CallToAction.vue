@@ -1,6 +1,6 @@
 <template>
-  <div class="py-32 mx-auto max-w-3xl text-center">
-    <p class="pb-10 text-3xl">
+  <div class="py-16 sm:py-32 px-4 mx-auto max-w-3xl text-center">
+    <p class="pb-10 text-2xl sm:text-3xl">
       {{ $t('callToAction.title') }}
     </p>
 
