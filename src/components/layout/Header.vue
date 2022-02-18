@@ -1,7 +1,7 @@
 <template>
   <header class="absolute z-50 w-full">
     <div class="flex items-center p-6 lg:p-10 w-full bg-background">
-      <div class="flex-grow">
+      <div class="flex flex-grow items-center">
         <nuxt-link
           :to="localePath('index')"
           :aria-label="$t('links.index')"
@@ -18,20 +18,17 @@
             : 'invisible ease-out-mijin duration-150 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
-        <ul class="flex flex-col lg:flex-row lg:items-center p-6 lg:p-0 border-b lg:border-b-0 border-gray-900">
+        <ul class="flex flex-col lg:flex-row lg:items-center p-6 lg:p-0">
           <li
             v-for="section, sectionKey in $config.nav"
             :key="sectionKey"
           >
-            <div
-              v-if="Object.keys(section)"
-              class="group relative"
-            >
-              <div class="py-2 lg:px-6">
+            <div class="group relative pb-8 lg:pb-0">
+              <div class="py-2 lg:px-6 text-gray-500 lg:text-gray-900">
                 {{ $t(`links.${sectionKey}`) }}
               </div>
 
-              <ul class="lg:absolute group-hover:visible lg:invisible lg:z-10 lg:p-4 space-y-1 w-56 lg:bg-background lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
+              <ul class="grid lg:absolute group-hover:visible lg:invisible lg:z-10 grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-1 lg:p-4 lg:w-56 lg:bg-background lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
                 <li
                   v-for="item, key in section"
                   :key="key"
@@ -41,11 +38,12 @@
                     :href="item.link"
                     external
                     :class="[
-                      'p-2 rounded w-full',
+                      'lg:p-2 rounded w-full',
                       {
                         'hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
+                    @click="closeNav()"
                   >
                     {{ $t(`links.${key}`) }}
                   </UiLink>
@@ -55,18 +53,19 @@
                     tag="nuxt-link"
                     :to="localePath(item.page)"
                     :class="[
-                      'p-2 rounded w-full',
+                      'lg:p-2 rounded w-full',
                       {
                         'hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
+                    @click="closeNav()"
                   >
                     {{ $t(`links.${key}`) }}
                   </UiLink>
 
                   <div
                     v-else
-                    class="p-2"
+                    class="lg:p-2"
                   >
                     {{ $t(`links.${key}`) }}
                     <UiTag size="sm">
@@ -89,7 +88,7 @@
       <button
         class="lg:hidden relative w-6 h-4"
         :aria-label="$t('common.menu')"
-        @click="isNavOpen = !isNavOpen"
+        @click="toggleNav()"
       >
         <div
           :class="[
@@ -123,5 +122,25 @@ export default {
   data: () => ({
     isNavOpen: false,
   }),
+
+  methods: {
+    closeNav() {
+      this.isNavOpen = false;
+      document.body.classList.remove('scroll-prevent');
+    },
+
+    openNav() {
+      this.isNavOpen = true;
+      document.body.classList.add('scroll-prevent');
+    },
+
+    toggleNav() {
+      if (this.isNavOpen) {
+        this.closeNav();
+      } else {
+        this.openNav();
+      }
+    },
+  },
 };
 </script>
