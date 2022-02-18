@@ -1,12 +1,14 @@
 <template>
-  <div
-    ref="section"
-    :class="[
-      'h-px bg-gray-900 transition-transform duration-700 origin-left',
-      inView ? 'scale-x-100' : 'scale-x-0',
-    ]"
-  >
-    <slot />
+  <div>
+    <div
+      ref="section"
+      :class="[
+        'h-px bg-gray-900 transition-transform duration-700 origin-left',
+        inView ? 'scale-x-100' : 'scale-x-0',
+      ]"
+    >
+      <slot />
+    </div>
   </div>
 </template>
 

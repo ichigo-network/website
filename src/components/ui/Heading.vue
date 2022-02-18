@@ -5,7 +5,7 @@
       {
         'text-3xl sm:text-4xl md:text-5xl': (size || level) === 1,
         'text-2xl sm:text-3xl md:text-4xl': (size || level) === 2,
-        'text-xl sm:text-2xl md:text-3xl': (size || level) === 3,
+        'text-xl sm:text-2xl': (size || level) === 3,
         'text-lg sm:text-xl': (size || level) >= 4,
       },
     ]"
