@@ -11,6 +11,7 @@
     :target="external && !target ? '_blank' : target"
     :rel="external && !rel ? 'noopener' : rel"
     v-bind="$attrs"
+    v-on="$listeners"
   >
     <span
       v-if="external"

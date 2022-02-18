@@ -6,6 +6,7 @@
           :to="localePath('index')"
           :aria-label="$t('links.index')"
           class="inline-block"
+          @click.native="closeNav()"
         >
           <Logo class="h-10" />
         </nuxt-link>
@@ -15,7 +16,7 @@
           'block lg:flex overflow-y-auto lg:overflow-y-visible bg-background fixed lg:static inset-0 top-20 w-full lg:w-auto lg:visible lg:opacity-100 z-40',
           isNavOpen
             ? 'visible duration-300 opacity-100 translate-y-0'
-            : 'invisible ease-out-mijin duration-150 opacity-0 -translate-y-4 lg:translate-y-0',
+            : 'invisible ease-out-mijin duration-100 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
         <ul class="flex flex-col lg:flex-row lg:items-center p-6 lg:p-0">
@@ -43,7 +44,7 @@
                         'hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
-                    @click="closeNav()"
+                    @click.native="closeNav()"
                   >
                     {{ $t(`links.${key}`) }}
                   </UiLink>
@@ -58,7 +59,7 @@
                         'hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
-                    @click="closeNav()"
+                    @click.native="closeNav()"
                   >
                     {{ $t(`links.${key}`) }}
                   </UiLink>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="grid lg:grid-cols-2 pt-28 sm:pt-32 h-screen">
+    <LayoutMain class="grid lg:grid-cols-2 h-screen">
       <div class="flex flex-col order-2 sm:order-1 justify-center p-6 lg:p-10">
         <div class="mx-auto max-w-2xl ">
           <UiHeading>
@@ -33,7 +33,7 @@
       <div class="order-1 sm:order-2 px-4 sm:px-0">
         <div class="h-48 sm:h-full bg-gray-900" />
       </div>
-    </div>
+    </LayoutMain>
 
     <LayoutContainer class="py-32">
       <p class="mx-auto max-w-3xl text-3xl">

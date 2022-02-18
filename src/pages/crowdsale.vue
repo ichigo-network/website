@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <LayoutMain>
     <CallToAction />
-  </div>
+  </LayoutMain>
 </template>

@@ -41,3 +41,13 @@
     @apply h-screen overflow-y-hidden fixed lg:h-auto lg:overflow-y-visible lg:static;
   }
 }
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-opacity duration-150 ease-in-out;
+}
+
+.page-enter,
+.page-leave-to {
+  @apply opacity-0;
+}
