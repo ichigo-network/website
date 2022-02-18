@@ -1,7 +1,9 @@
 /* eslint-disable max-len */
 module.exports = {
+  name: 'ichigo network',
+
   head: {
-    title: 'ichigo network',
+    title: 'The first decentralized social ecosystem',
     description: 'ichigo decentralizes every social media components and place human users at the center of the ecosystem, while removing the need for any intermediate or central authority.',
     keywords: 'web3',
   },

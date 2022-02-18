@@ -23,3 +23,13 @@
     <CallToAction />
   </LayoutMain>
 </template>
+
+<script>
+export default {
+  head() {
+    return {
+      title: this.$t('links.faq'),
+    };
+  },
+};
+</script>
