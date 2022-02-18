@@ -1,6 +1,8 @@
 import i18n from './src/locales'; // eslint-disable-line import/no-import-module-exports
 import i18nEn from './src/locales/lang/en'; // eslint-disable-line import/no-import-module-exports
 
+const APP_URL = process.env.APP_URL || 'https://www.ichigo.network';
+
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   srcDir: 'src',
@@ -86,6 +88,23 @@ export default {
       { name: 'author', content: i18nEn.head.title },
       { name: 'description', content: i18nEn.head.description },
       { name: 'keywords', content: i18nEn.head.keywords },
+
+      { name: 'robots', content: 'index, follow' },
+      { name: 'googlebot', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' },
+      { name: 'bingbot', content: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1' },
+
+      { property: 'og:title', content: i18nEn.head.title },
+      { property: 'og:description', content: i18nEn.head.description },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:url', content: process.env.APP_URL },
+      { property: 'og:image', content: `${APP_URL}/social.png` },
+      { property: 'og:site_name', content: i18nEn.head.title },
+
+      { name: 'twitter:card', content: 'summary' },
+      { name: 'twitter:title', content: i18nEn.head.title },
+      { name: 'twitter:description', content: i18nEn.head.description },
+      { name: 'twitter:image', content: `${APP_URL}/social.png` },
+      { name: 'twitter:site', content: '@ichigonetwork' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
@@ -118,6 +137,13 @@ export default {
     ['@nuxtjs/i18n', i18n],
     '@nuxtjs/sitemap',
   ],
+
+  // Sitemap: https://sitemap.nuxtjs.org
+  sitemap: {
+    hostname: APP_URL,
+    gzip: true,
+    i18n: i18n.defaultLocale,
+  },
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
