@@ -1,9 +1,9 @@
 [dev]
-   command = "pnpm run dev || ( npx pnpm install -r --store=node_modules/.pnpm-store && pnpm run dev )"
+   command = "pnpm run dev || ( npm install pnpm && pnpm run dev )"
 
 [build.environment]
   NPM_FLAGS = "--version"
 
 [build]
-  command = "pnpm run generate || ( npx pnpm install -r --store=node_modules/.pnpm-store && pnpm run generate )"
+  command = "pnpm run generate || ( npm install pnpm && pnpm run generate )"
   publish = "dist"
