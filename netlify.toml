@@ -1,6 +1,6 @@
 [dev]
-   command = "pnpm run dev || ( npm install pnpm && pnpm run dev )"
+   command = "pnpm run dev || ( npm install -g pnpm && pnpm run dev )"
 
 [build]
-  command = "pnpm run generate || ( npm install pnpm && pnpm install && pnpm run generate )"
+  command = "pnpm run generate || ( npm install -g pnpm && pnpm install && pnpm run generate )"
   publish = "dist"
