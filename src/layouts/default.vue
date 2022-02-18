@@ -9,7 +9,10 @@
 <script>
 export default {
   head() {
-    return this.$nuxtI18nHead({ addDirAttribute: true, addSeoAttributes: true });
+    const head = this.$nuxtI18nHead({ addDirAttribute: true, addSeoAttributes: true });
+    head.link.push({ rel: 'canonical', href: `${this.$config.app.url}${this.$route.path}` });
+
+    return head;
   },
 };
 </script>

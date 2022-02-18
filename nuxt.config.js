@@ -20,6 +20,9 @@ export default {
 
   // Environment variables
   publicRuntimeConfig: {
+    app: {
+      url: APP_URL,
+    },
     nav: {
       use: {
         ichigoCrowdsale: {
