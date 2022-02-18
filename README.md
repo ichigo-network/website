@@ -1,6 +1,8 @@
-# website
+# Website
 
-## Build Setup
+[![Netlify Status](https://api.netlify.com/api/v1/badges/98ee8d89-c157-4ed4-a1c5-98c9a5d5a3c2/deploy-status)](https://app.netlify.com/sites/ichigo-network-website/deploys)
+
+## 🛠 Build setup
 
 ```bash
 # install dependencies
@@ -15,7 +17,7 @@ $ pnpm run generate
 
 For detailed explanation on how things work, check out the [documentation](https://nuxtjs.org).
 
-## Special Directories
+## 🗂 Directories structure
 
 You can create the following extra directories, some of which have special behaviors. Only `pages` is required; you can delete them if you don't want to use their functionality.
 
