@@ -1,5 +1,5 @@
 import i18n from './src/locales'; // eslint-disable-line import/no-import-module-exports
-import i18nEn from './src/locales/en'; // eslint-disable-line import/no-import-module-exports
+import i18nEn from './src/locales/lang/en'; // eslint-disable-line import/no-import-module-exports
 
 export default {
   // Target: https://go.nuxtjs.dev/config-target
