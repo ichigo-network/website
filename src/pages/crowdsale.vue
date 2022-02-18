@@ -1,7 +1,7 @@
 <template>
   <LayoutMain>
     <LayoutContainer>
-      <div class="grid grid-cols-2 gap-10 items-center py-24">
+      <div class="grid lg:grid-cols-2 gap-10 items-center sm:py-24">
         <div>
           <UiHeading class="pb-10">
             Public Crowdsale
@@ -16,10 +16,10 @@
         </div>
 
         <div>
-          <div class="p-16 bg-secondary-300">
+          <div class="p-6 sm:p-16 bg-secondary-300">
             <div class="max-w-2xl">
               <UiHeading
-                class="pb-48"
+                class="pb-10 lg:pb-48"
                 :level="2"
               >
                 Until crowdsale starts
@@ -27,7 +27,7 @@
 
               <Countdown
                 v-slot="{ days, hours, minutes, seconds }"
-                :time="new Date('2022-3-15') - new Date()"
+                :time="new Date('2022-03-15') - new Date()"
                 class="grid grid-cols-4 gap-4"
               >
                 <div
@@ -51,7 +51,7 @@
                   ]"
                   :key="countdown.unit"
                 >
-                  <div class="text-5xl">
+                  <div class="text-4xl sm:text-5xl">
                     {{ countdown.count }}
                   </div>
                   <div class="font-light">
@@ -66,10 +66,13 @@
 
       <UiDivider class="py-10" />
 
-      <div class="grid grid-cols-2">
+      <div class="grid lg:grid-cols-2">
         <div>
           <div class="sticky top-10">
-            <UiHeading :level="2">
+            <UiHeading
+              :level="2"
+              class="pb-10 lg:pb-0"
+            >
               Token Utility
             </UiHeading>
           </div>
@@ -151,16 +154,16 @@
 
       <UiDivider class="py-10" />
 
-      <div class="grid grid-cols-2">
-        <div>
+      <div class="grid sm:grid-cols-2 gap-16 lg:gap-0">
+        <div class="sm:pr-10">
           <UiHeading
             :level="2"
-            class="pb-10"
+            class="pb-4 sm:pb-10"
           >
             Sale Details
           </UiHeading>
 
-          <div class="max-w-lg divide-y divide-gray-500">
+          <div class="sm:max-w-lg divide-y divide-gray-300">
             <div class="grid grid-cols-2 py-4">
               <div>
                 Exchange rate
@@ -196,7 +199,7 @@
         <div>
           <UiHeading
             :level="2"
-            class="pb-10"
+            class="pb-4 sm:pb-10"
           >
             How it works
           </UiHeading>
