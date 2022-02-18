@@ -12,11 +12,18 @@
           </p>
 
           <div class="flex gap-6 items-center">
-            <UiButton size="lg">
+            <UiButton
+              :to="localePath('sandbox')"
+              tag="nuxt-link"
+              size="lg"
+            >
               {{ $t('common.getStarted') }}
             </UiButton>
 
-            <UiLink class="text-lg">
+            <UiLink
+              href="https://ichigo.network/whitepaper.pdf"
+              class="text-lg"
+            >
               {{ $t('common.readWhitepaper') }}
             </UiLink>
           </div>

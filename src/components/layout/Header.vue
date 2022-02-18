@@ -78,7 +78,10 @@
           </li>
 
           <li class="hidden lg:block">
-            <UiButton>
+            <UiButton
+              :to="localePath('sandbox')"
+              tag="nuxt-link"
+            >
               {{ $t('common.getStarted') }}
             </UiButton>
           </li>
