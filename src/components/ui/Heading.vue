@@ -24,8 +24,8 @@
         <span
           v-if="inView"
           :key="key"
-          aria-hidden="true"
           :style="{ transitionDelay: `${key * delay}ms` }"
+          aria-hidden="true"
         >{{ word }} </span>
       </template>
     </transition-group>

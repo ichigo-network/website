@@ -2,7 +2,7 @@
   <LayoutMain>
     <LayoutContainer>
       <div class="grid lg:grid-cols-2 gap-10 items-center sm:py-24">
-        <div>
+        <div class="mx-auto max-w-2xl">
           <UiHeading class="pb-10">
             ichigo sandbox
           </UiHeading>
@@ -189,11 +189,7 @@
           </p>
         </div>
       </div>
-
-      <UiDivider class="py-10" />
     </LayoutContainer>
-
-    <CallToAction />
   </LayoutMain>
 </template>
 
