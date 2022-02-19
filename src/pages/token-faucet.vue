@@ -16,28 +16,41 @@
         </div>
 
         <div>
-          <form class="p-6 sm:p-16 space-y-10 bg-gray-50">
+          <form
+            class="p-6 sm:p-10 space-y-6 bg-gray-50"
+            @submit.prevent="submit()"
+          >
             <UiInput
+              v-model="form.email"
+              name="email"
               placeholder="Your email address"
-              type="email"
               required
+              type="email"
             >
               Email
             </UiInput>
 
-            <UiInput
+            <UiTextarea
+              v-model="form.wallet"
+              name="wallet"
               placeholder="Your wallet address"
-              type="email"
               required
+              :resize="false"
             >
               Wallet address
-            </UiInput>
+            </UiTextarea>
 
             <UiButton
               type="submit"
             >
               Request token
             </UiButton>
+
+            <p class="text-sm font-light text-gray-500">
+              Eligible for 45 ichigo tokens every 3 days.
+              <br>
+              We do not store your email address.
+            </p>
           </form>
         </div>
       </div>
@@ -51,10 +64,43 @@
 
 <script>
 export default {
+
+  data: () => ({
+    form: {
+      email: '',
+      wallet: '',
+    },
+  }),
+
   head() {
     return {
       title: this.$t('links.tokenFaucet'),
     };
+  },
+
+  methods: {
+    submit() {
+      if (!this.email && this.wallet) return;
+
+      fetch(`https://faucet.ichigo.network/request?email=${this.email}&address=${this.wallet}`, { method: 'GET' })
+        .then((response) => response.json())
+        .then((body) => {
+          switch (body.error) {
+            case 0:
+              console.warn('<p style="color:#27ae60 !important">The link to get your token has been sent.<br> Please check you email.</p>', false);
+              break;
+            case 21:
+              console.warn(false, 'You have already received tokens recently. <br> come back after 3 days to get more !');
+              break;
+            default:
+              console.warn(false, 'Can\'t connect to the network, try again later');
+          }
+        })
+        .catch(() => {
+          console.warn('Can\'t connect to the network, try again later');
+          console.warn(false);
+        });
+    },
   },
 };
 </script>
