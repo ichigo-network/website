@@ -1,7 +1,7 @@
 <template>
   <div>
     <div
-      ref="section"
+      ref="target"
       :class="[
         'h-px bg-gray-900 transition-transform duration-700 origin-left',
         inView ? 'scale-x-100' : 'scale-x-0',
@@ -13,6 +13,8 @@
 </template>
 
 <script>
+let observer;
+
 export default {
   props: {
     once: {
@@ -28,14 +30,18 @@ export default {
   mounted() {
     if ('IntersectionObserver' in window) {
       const callback = (entries) => {
-        if (this.once && this.inView) return;
+        if (this.inView) return;
         this.inView = entries[0].isIntersecting;
       };
-      const observer = new IntersectionObserver(callback, {
-        threshold: [0.4],
-      });
-      observer.observe(this.$refs.section);
+      observer = new IntersectionObserver(callback);
+      observer.observe(this.$refs.target);
+    } else {
+      this.inView = true;
     }
+  },
+
+  beforeDestroy() {
+    if ('IntersectionObserver' in window) observer.disconnect();
   },
 };
 </script>
