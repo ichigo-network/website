@@ -9,7 +9,7 @@ module.exports = {
   },
 
   callToAction: {
-    title: 'Join ichigo network and start the first decentralized social ecosystem',
+    title: 'Join @:name and start the first decentralized social ecosystem',
   },
 
   // common
@@ -26,11 +26,11 @@ module.exports = {
 
   ecosystem: {
     title: 'ichigo ecosystem',
-    description: [
-      'ichigo network achieves to recreate social interactions ecosystem without the needs of a central authority and remove the powerful middle-men.',
-      'Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes.',
-      'It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actors equitably, including end-users, content creators, application providers and so on.',
-    ],
+    description: {
+      0: '@:name achieves to recreate social interactions ecosystem without the needs of a central authority and remove the powerful middle-men.',
+      1: 'Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes.',
+      2: 'It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actors equitably, including end-users, content creators, application providers and so on.',
+    },
     advertisingMarketplace: 'Advertising marketplace',
     applicationLayer: 'Application layer',
     blockchain: 'Blockchain',
@@ -71,12 +71,12 @@ module.exports = {
     title: 'FAQ',
     items: {
       whatIsIchigo: {
-        question: 'What is Ichigo network ?',
+        question: 'What is @:name ?',
         answer: 'Ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize all social media components and place human users at the center of the ecosystem, while removing the need for any intermediate or central authority.',
       },
       whatDifferentiateIchigo: {
-        question: 'What differentiate Ichigo Network?',
-        answer: 'Ichigo network is based on leading globally-adopted technologies : Solana blockchain and IPFS, so you know its fundamentals are solid. It is the first project to propose a fully end-to-end social ecosystem implementing all necessary components in a decentralized manner: Storage provider, Application-layer,  Advertisement Marketplace, and incentive distribution to Content Creators and End-users. Project development is steered by the community to become a completely decentralized platform with all necessary components built-in.',
+        question: 'What differentiate @:name?',
+        answer: '@:name is based on leading globally-adopted technologies : Solana blockchain and IPFS, so you know its fundamentals are solid. It is the first project to propose a fully end-to-end social ecosystem implementing all necessary components in a decentralized manner: Storage provider, Application-layer,  Advertisement Marketplace, and incentive distribution to Content Creators and End-users. Project development is steered by the community to become a completely decentralized platform with all necessary components built-in.',
       },
       whatIsTargetAndVision: {
         question: 'What is your target and vision?',
@@ -139,7 +139,7 @@ module.exports = {
     },
     plugAndPlay: {
       title: 'Plug-and-play',
-      description: 'Application can easily plug to the ichigo network and leverage all features',
+      description: 'Application can easily plug to the @:name and leverage all features',
     },
     socialMetadata: {
       title: 'Social metadata',
@@ -150,7 +150,7 @@ module.exports = {
   // footer
 
   footer: {
-    license: 'Non-exclusive community {year}, ichigo network.',
+    license: 'Non-exclusive community {year}, @:name.',
     rights: 'All rights publicly available.',
   },
 

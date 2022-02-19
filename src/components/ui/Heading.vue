@@ -25,7 +25,7 @@
           v-if="inView"
           :key="key"
           aria-hidden="true"
-          :style="{ transitionDelay: `${key * 200}ms` }"
+          :style="{ transitionDelay: `${key * delay}ms` }"
         >{{ word }} </span>
       </template>
     </transition-group>
@@ -39,6 +39,11 @@ let observer;
 
 export default {
   props: {
+    delay: {
+      default: 200,
+      type: Number,
+    },
+
     level: {
       default: 1,
       type: [Number, String],

@@ -11,9 +11,9 @@
             v-for="faq, key in $t('faq.items')"
             :key="key"
           >
-            {{ faq.question }}
+            {{ $t(`faq.items.${key}.question`) }}
             <template #content>
-              {{ faq.answer }}
+              {{ $t(`faq.items.${key}.answer`) }}
             </template>
           </UiCollapse>
         </div>

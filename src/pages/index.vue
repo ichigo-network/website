@@ -36,9 +36,13 @@
     </LayoutMain>
 
     <LayoutContainer class="py-32">
-      <p class="mx-auto max-w-3xl text-3xl">
+      <UiHeading
+        :level="2"
+        :delay="100"
+        class="mx-auto max-w-3xl"
+      >
         {{ $t('index.catchphrase') }}
-      </p>
+      </UiHeading>
     </LayoutContainer>
 
     <UiDivider />
@@ -51,11 +55,11 @@
           </UiHeading>
 
           <p
-            v-for="sentence, index in $t('ecosystem.description')"
-            :key="index"
+            v-for="sentence, key in $t('ecosystem.description')"
+            :key="key"
             class="pt-6 text-gray-700"
           >
-            {{ sentence }}
+            {{ $t(`ecosystem.description[${key}]`) }}
           </p>
         </div>
       </div>
