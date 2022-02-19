@@ -6,6 +6,7 @@
       {
         // color
         'hover:text-gray-600': color === 'gray',
+        'text-primary-500 hover:text-gray-600': color === 'primary',
       },
     ]"
     :target="external && !target ? '_blank' : target"
