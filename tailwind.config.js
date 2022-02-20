@@ -126,9 +126,9 @@ module.exports = {
 
       addUtilities({
         '.dark': {
-          '--color-background': colors.gray['900'],
+          '--color-background': '#111111',
 
-          '--color-gray-50': colors.black,
+          '--color-gray-50': colors.gray['900'],
           '--color-gray-100': colors.gray['800'],
           '--color-gray-200': colors.gray['700'],
           '--color-gray-300': colors.gray['600'],

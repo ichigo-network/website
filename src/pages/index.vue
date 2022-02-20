@@ -64,7 +64,7 @@
         </div>
       </div>
 
-      <div class="mx-4 lg:mx-0 border lg:border-0 border-gray-900">
+      <div class="mx-4 lg:mx-0 border lg:border-0 border-current">
         <div
           v-for="ecosystem, key in {
             blockchain: {
@@ -111,7 +111,7 @@
           "
           :key="key"
         >
-          <div class="p-4 lg:p-10 border-l-0 lg:border-l border-gray-900">
+          <div class="p-4 lg:p-10 border-l-0 lg:border-l border-current">
             <div class="mx-auto max-w-xl">
               <h2 class="pb-4 text-xl">
                 <span class="text-primary-400">{{ $t(`ecosystem.${key}`) }}</span> <span class="text-gray-200">/</span> {{ $t(`ecosystem.${ecosystem.label}`) }}
@@ -141,7 +141,7 @@
       </div>
     </div>
 
-    <div class="lg:grid relative grid-cols-2 py-24 px-4 lg:px-10 bg-secondary-300 dark:bg-secondary-900">
+    <div class="lg:grid relative grid-cols-2 py-24 px-4 lg:px-10 dark:text-gray-50 bg-secondary-400">
       <div>
         <div class="sticky top-10 pb-16 mx-auto max-w-3xl">
           <UiHeading>
@@ -175,7 +175,7 @@
           :key="key"
           class="flex lg:flex-col gap-4"
         >
-          <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-gray-900">
+          <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-current">
             <UiIcon
               :name="feature.icon"
               size="lg"
@@ -324,7 +324,6 @@
                 'whatWillBeTheTotalSupply',
               ]"
               :key="faq"
-              class="dark:border-gray-50"
             >
               {{ $t(`faq.items.${faq}.question`) }}
               <template #content>

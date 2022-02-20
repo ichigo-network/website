@@ -3,7 +3,7 @@
     :is="tag"
     :aria-disabled="disabled"
     :aria-expanded="collapsed ? 'false' : 'true'"
-    class="border-b border-gray-900"
+    class="border-b border-current"
   >
     <div
       class="flex items-center py-6"
@@ -50,8 +50,6 @@
 const collapseDurationMs = 300;
 
 export default {
-  name: 'MijinCollapse',
-
   props: {
     disabled: {
       default: false,

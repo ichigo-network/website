@@ -17,7 +17,7 @@
           'block lg:flex overflow-y-auto lg:overflow-y-visible bg-background fixed lg:static inset-0 top-20 w-full lg:w-auto lg:visible lg:opacity-100 z-40',
           isNavOpen
             ? 'visible duration-300 opacity-100 translate-y-0'
-            : 'invisible ease-out-mijin duration-100 opacity-0 -translate-y-4 lg:translate-y-0',
+            : 'invisible duration-100 opacity-0 -translate-y-4 lg:translate-y-0',
         ]"
       >
         <ul class="flex flex-col lg:flex-row lg:items-center p-6 lg:p-0">
@@ -30,7 +30,7 @@
                 {{ $t(`links.${sectionKey}`) }}
               </div>
 
-              <ul class="grid lg:absolute group-hover:visible lg:invisible lg:z-10 grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-1 lg:p-4 lg:w-56 lg:bg-background rounded-sm lg:dark:border lg:dark:border-gray-100 lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
+              <ul class="grid lg:absolute group-hover:visible lg:invisible lg:z-10 grid-cols-2 lg:grid-cols-1 gap-4 lg:gap-1 lg:p-4 lg:w-64 lg:bg-background rounded-sm lg:dark:border lg:dark:border-gray-100 lg:shadow-lg group-hover:opacity-100 lg:opacity-0 transition-all">
                 <li
                   v-for="item, key in section"
                   :key="key"
@@ -42,7 +42,7 @@
                     :class="[
                       'lg:p-2 rounded w-full',
                       {
-                        'lg:hover:bg-gray-50 lg:dark:hover:bg-gray-100': item.link || item.page,
+                        'lg:hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
                     @click.native="closeNav()"
@@ -57,7 +57,7 @@
                     :class="[
                       'lg:p-2 rounded w-full',
                       {
-                        'lg:hover:bg-gray-50 lg:dark:hover:bg-gray-100': item.link || item.page,
+                        'lg:hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
                     @click.native="closeNav()"
@@ -128,21 +128,23 @@ export default {
     isNavOpen: false,
   }),
 
-  head() {
-    return {
-      htmlAttrs: {
-        class: this.isNavOpen ? 'scroll-prevent' : null,
-      },
-    };
-  },
-
   methods: {
     closeNav() {
       this.isNavOpen = false;
+      document.body.classList.remove('scroll-prevent');
+    },
+
+    openNav() {
+      this.isNavOpen = true;
+      document.body.classList.add('scroll-prevent');
     },
 
     toggleNav() {
-      this.isNavOpen = !this.isNavOpen;
+      if (this.isNavOpen) {
+        this.closeNav();
+      } else {
+        this.openNav();
+      }
     },
   },
 };

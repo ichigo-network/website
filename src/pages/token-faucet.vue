@@ -23,7 +23,7 @@
                 key="success"
                 class="py-10 mx-auto space-y-6 max-w-lg"
               >
-                <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-gray-900">
+                <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-current">
                   <UiIcon
                     name="check"
                     size="lg"
