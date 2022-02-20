@@ -35,7 +35,7 @@
       </div>
     </LayoutMain>
 
-    <LayoutContainer class="py-32">
+    <LayoutContainer class="py-32 lg:py-64">
       <UiHeading
         :level="2"
         :delay="100"

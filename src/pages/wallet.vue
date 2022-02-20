@@ -50,7 +50,7 @@
             The ichigo wallet will help you maintain your account on the ichigo network. It includes 2 important components:
           </p>
 
-          <ol class="ml-4 space-y-2 list-decimal">
+          <ol class="ml-5 space-y-2 list-decimal">
             <li>
               <p>your profile, which represents your identity on the network and allows you to</p>
               <ul class="ml-4 list-disc">
@@ -77,22 +77,30 @@
             Install and use
           </UiHeading>
 
-          <p>
-            ichigo wallet can be installed from your Google Chrome browser from the Google Web Store.
-          </p>
+          <ol class="ml-5 space-y-2 list-decimal">
+            <li>
+              <UiLink
+                color="primary"
+                external
+                href="https://chrome.google.com/webstore/detail/ichigo-wallet/epgjeibkbpecndocbnmeelnhcjocchmj/"
+              >
+                Get the ichigo wallet
+              </UiLink> Google Chrome extension from the Google Web Store.
+            </li>
 
-          <p>
-            Follow the link above to access the extension page and click on the button "Add to chrome"
-          </p>
+            <li>
+              Follow the link above to access the extension page and click on the button "Add to chrome"
+            </li>
 
-          <p>
-            You will then be able to find the Ichigo Wallet in your chrome browser settings > extensions.
-            Do not hesitate to pin the Ichigo Wallet in the toolbar for easier use.
-          </p>
+            <li>
+              You will then be able to find the ichigo wallet in your chrome browser settings > extensions.
+              Do not hesitate to pin the ichigo wallet in the toolbar for easier use.
+            </li>
 
-          <p>
-            After installing the wallet you will need to initialize it.
-          </p>
+            <li>
+              Initialize the wallet.
+            </li>
+          </ol>
 
           <UiHeading
             :level="4"
@@ -102,7 +110,7 @@
           </UiHeading>
 
           <p>
-            When you first open your Ichigo Wallet, select the option to create a New Account.
+            When you first open your ichigo wallet, select the option to create a New Account.
             This will generate a Seed Phrase associated with your account. Take care to note down this Seed Phrase,
             it will be needed to restore your account. If you forgot your Seed Phrase your account will be lost forever.
             On the next page set a password to protect your wallet locally.
@@ -136,8 +144,24 @@
           <p>
             The wallet holds your ichigo tokens. Use the wallet address found on this page to receive or transfer ichigo tokens.
             This will allow you to settle transaction fees with the network and to receive incentives tokens.
-            In the test version, the wallet has an "Airdrop" button that will link to our faucet page.
-            Request test tokens from there to try our web3 test application Sandbox. The test version uses Ichigo tokens minted on the Solana Devnet.
+            In the test version, the wallet has an "Airdrop" button that will link to our <UiLink
+              :to="localePath('token-faucet')"
+              color="primary"
+              tag="nuxt-link"
+            >
+              faucet page
+            </UiLink>.
+            Request test tokens from there to try our web3 test application <UiLink
+              :to="localePath('sandbox')"
+              color="primary"
+              tag="nuxt-link"
+            >
+              Sandbox
+            </UiLink>.
+          </p>
+
+          <p class="font-light text-gray-500">
+            The test version uses ichigo tokens minted on the Solana Devnet.
           </p>
 
           <UiHeading

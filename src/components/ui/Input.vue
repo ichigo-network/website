@@ -28,8 +28,6 @@
 
 <script>
 export default {
-  name: 'MijinInput',
-
   props: {
     name: {
       type: String,

@@ -47,9 +47,7 @@
             </UiButton>
 
             <p class="text-sm font-light text-gray-500">
-              Eligible for 45 ichigo tokens every 3 days.
-              <br>
-              We do not store your email address.
+              Eligible for 45 ichigo tokens every 3 days. We do not store your email address.
             </p>
           </form>
         </div>

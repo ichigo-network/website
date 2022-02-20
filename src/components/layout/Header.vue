@@ -68,7 +68,7 @@
                     v-else
                     class="lg:p-2"
                   >
-                    {{ $t(`links.${key}`) }}
+                    <span class="text-gray-600">{{ $t(`links.${key}`) }}</span>
                     <UiTag size="sm">
                       {{ $t('common.soon') }}
                     </UiTag>
