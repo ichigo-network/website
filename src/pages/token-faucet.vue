@@ -65,6 +65,7 @@
 
                 <UiButton
                   type="submit"
+                  size="form"
                   :loading="loading"
                 >
                   Request token

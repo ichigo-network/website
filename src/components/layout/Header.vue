@@ -41,7 +41,7 @@
                     :class="[
                       'lg:p-2 rounded w-full',
                       {
-                        'hover:bg-gray-50': item.link || item.page,
+                        'lg:hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
                     @click.native="closeNav()"
@@ -56,7 +56,7 @@
                     :class="[
                       'lg:p-2 rounded w-full',
                       {
-                        'hover:bg-gray-50': item.link || item.page,
+                        'lg:hover:bg-gray-50': item.link || item.page,
                       }
                     ]"
                     @click.native="closeNav()"
