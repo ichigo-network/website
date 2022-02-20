@@ -150,7 +150,7 @@ module.exports = {
   // footer
 
   footer: {
-    license: 'Non-exclusive community {year}, @:name.',
+    license: 'Non-exclusive community {year}, @:name',
     rights: 'All rights publicly available.',
   },
 

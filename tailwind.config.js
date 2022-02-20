@@ -11,6 +11,18 @@ module.exports = {
     colors: {
       background: 'var(--color-background)',
       current: 'currentColor',
+      error: {
+        50: 'var(--color-error-50)',
+        100: 'var(--color-error-100)',
+        200: 'var(--color-error-200)',
+        300: 'var(--color-error-300)',
+        400: 'var(--color-error-400)',
+        500: 'var(--color-error-500)',
+        600: 'var(--color-error-600)',
+        700: 'var(--color-error-700)',
+        800: 'var(--color-error-800)',
+        900: 'var(--color-error-900)',
+      },
       gray: {
         50: 'var(--color-gray-50)',
         100: 'var(--color-gray-100)',
@@ -96,6 +108,17 @@ module.exports = {
           '--color-secondary-700': colors.rose['700'],
           '--color-secondary-800': colors.rose['800'],
           '--color-secondary-900': colors.rose['900'],
+
+          '--color-error-50': colors.rose['50'],
+          '--color-error-100': colors.rose['100'],
+          '--color-error-200': colors.rose['200'],
+          '--color-error-300': colors.rose['300'],
+          '--color-error-400': colors.rose['400'],
+          '--color-error-500': colors.rose['500'],
+          '--color-error-600': colors.rose['600'],
+          '--color-error-700': colors.rose['700'],
+          '--color-error-800': colors.rose['800'],
+          '--color-error-900': colors.rose['900'],
         },
       });
     }),

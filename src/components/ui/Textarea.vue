@@ -1,5 +1,5 @@
 <template>
-  <label class="block">
+  <label class="flex flex-col">
     <p
       v-if="$slots.default"
       class="mb-1 text-gray-800"
