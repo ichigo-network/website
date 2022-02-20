@@ -16,7 +16,7 @@
         </div>
 
         <div>
-          <div class="p-6 sm:p-16 bg-secondary-300">
+          <div class="p-6 sm:p-16 bg-secondary-300 dark:bg-secondary-500">
             <div class="max-w-2xl">
               <UiHeading
                 class="pb-10 lg:pb-48"

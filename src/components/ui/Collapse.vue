@@ -18,10 +18,10 @@
 
       <div>
         <div class="relative w-4 h-4">
-          <div class="absolute inset-0 m-auto w-full h-0.5 bg-gray-900" />
+          <div class="absolute inset-0 m-auto w-full h-0.5 bg-current" />
           <div
             :class="[
-              'absolute inset-0 m-auto w-0.5 h-full bg-gray-900 transition-transform',
+              'absolute inset-0 m-auto w-0.5 h-full bg-current transition-transform',
               { 'rotate-90': !collapsed }
             ]"
           />

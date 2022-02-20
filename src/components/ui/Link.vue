@@ -53,6 +53,7 @@ export default {
       type: String,
       validator: (value) => [
         'gray',
+        'primary',
       ].includes(value),
     },
 

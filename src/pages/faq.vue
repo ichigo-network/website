@@ -1,7 +1,7 @@
 <template>
   <LayoutMain>
     <div class="pr-4 sm:pr-0 pl-4 sm:pl-24">
-      <div class="p-6 sm:p-16 bg-primary-300">
+      <div class="p-6 sm:p-16 dark:text-gray-50 bg-primary-300">
         <div class="max-w-3xl">
           <UiHeading class="pb-8">
             {{ $t('faq.title') }}
@@ -10,6 +10,7 @@
           <UiCollapse
             v-for="faq, key in $t('faq.items')"
             :key="key"
+            class="dark:border-gray-50"
           >
             {{ $t(`faq.items.${key}.question`) }}
             <template #content>

@@ -4,6 +4,7 @@ const plugin = require('tailwindcss/plugin');
 
 module.exports = {
   mode: 'jit',
+  darkMode: 'class',
   theme: {
     boxShadow: {
       lg: '0 1px 16px 0px rgba(0, 0, 0, 0.05)',
@@ -120,6 +121,23 @@ module.exports = {
           '--color-error-700': colors.rose['700'],
           '--color-error-800': colors.rose['800'],
           '--color-error-900': colors.rose['900'],
+        },
+      });
+
+      addUtilities({
+        '.dark': {
+          '--color-background': colors.gray['900'],
+
+          '--color-gray-50': colors.black,
+          '--color-gray-100': colors.gray['800'],
+          '--color-gray-200': colors.gray['700'],
+          '--color-gray-300': colors.gray['600'],
+          '--color-gray-400': colors.gray['500'],
+          '--color-gray-500': colors.gray['400'],
+          '--color-gray-600': colors.gray['300'],
+          '--color-gray-700': colors.gray['200'],
+          '--color-gray-800': colors.gray['100'],
+          '--color-gray-900': colors.gray['50'],
         },
       });
 

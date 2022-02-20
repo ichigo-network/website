@@ -24,11 +24,11 @@
   }
 
   html {
-    @apply h-full text-gray-900 bg-background selection:bg-gray-900 selection:text-primary-400;
+    @apply h-full text-gray-900 bg-background;
   }
 
   body {
-    @apply min-h-full;
+    @apply min-h-full selection:bg-gray-900 selection:text-primary-400 dark:selection:bg-primary-400 dark:selection:text-gray-50;
   }
 
   :lang(ja-Jp) {
