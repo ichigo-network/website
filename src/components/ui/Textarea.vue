@@ -8,7 +8,7 @@
     </p>
 
     <textarea
-      class="block w-full h-full leading-tight placeholder-gray-400 text-gray-700 bg-transparent rounded border focus:border-primary-400 transition-colors duration-150 ease-in-out appearance-none focus:outline-none"
+      class="block w-full h-full leading-tight placeholder-gray-400 text-gray-700 bg-transparent rounded border border-gray-200 focus:border-gray-400 transition-colors duration-150 ease-in-out appearance-none focus:outline-none"
       :class="[
         {
           // size

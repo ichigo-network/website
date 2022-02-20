@@ -16,50 +16,75 @@
         </div>
 
         <div>
-          <form
-            class="p-6 sm:p-10 space-y-6 bg-gray-50"
-            @submit.prevent="submit()"
-          >
-            <UiInput
-              v-model="form.email"
-              name="email"
-              placeholder="Your email address"
-              required
-              type="email"
-              :pattern="$options.form.email.pattern"
-            >
-              Email
-            </UiInput>
+          <div class="p-6 sm:p-10 space-y-6 bg-gray-50">
+            <UiTransitionFade mode="out-in">
+              <div
+                v-if="status === 'success'"
+                key="success"
+                class="py-10 mx-auto space-y-6 max-w-lg"
+              >
+                <div class="flex flex-shrink-0 justify-center items-center w-16 h-16 border border-gray-900">
+                  <UiIcon
+                    name="check"
+                    size="lg"
+                  />
+                </div>
 
-            <UiTextarea
-              v-model="form.walletAddress"
-              :maxlength="$options.form.walletAddress.length"
-              :minlength="$options.form.walletAddress.length"
-              name="walletAddress"
-              placeholder="Your wallet address"
-              :resize="false"
-            >
-              Wallet address
-            </UiTextarea>
+                <p>Token request link sent to your email address.</p>
 
-            <UiButton
-              type="submit"
-              :loading="loading"
-            >
-              Request token
-            </UiButton>
+                <p>A new request can be made in 3 days.</p>
+              </div>
 
-            <div
-              v-if="status && status !== 'success'"
-              class="text-error-500"
-            >
-              {{ status }}
-            </div>
+              <form
+                v-else
+                key="form"
+                class="space-y-6"
+                @submit.prevent="submit()"
+              >
+                <UiInput
+                  v-model="form.email"
+                  name="email"
+                  placeholder="Your email address"
+                  required
+                  type="email"
+                  :pattern="$options.form.email.pattern"
+                >
+                  Email
+                </UiInput>
 
-            <p class="text-sm font-light text-gray-500">
-              Eligible for 45 ichigo tokens every 3 days. We do not store your email address.
-            </p>
-          </form>
+                <UiTextarea
+                  v-model="form.walletAddress"
+                  :maxlength="$options.form.walletAddress.maxlength"
+                  :minlength="$options.form.walletAddress.minlength"
+                  name="walletAddress"
+                  placeholder="Your wallet address"
+                  :resize="false"
+                >
+                  Wallet address
+                </UiTextarea>
+
+                <UiButton
+                  type="submit"
+                  :loading="loading"
+                >
+                  Request token
+                </UiButton>
+
+                <UiTransitionFade mode="out-in">
+                  <div
+                    v-if="status && status !== 'success'"
+                    class="text-error-500"
+                  >
+                    {{ status }}
+                  </div>
+                </UiTransitionFade>
+
+                <p class="text-sm font-light text-gray-500">
+                  Eligible for 45 ichigo tokens every 3 days. We do not store your email address.
+                </p>
+              </form>
+            </UiTransitionFade>
+          </div>
         </div>
       </div>
 
@@ -77,14 +102,15 @@ export default {
       pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,12}$',
     },
     walletAddress: {
-      length: 94,
+      minlength: 42,
+      maxlength: 45,
     },
   },
 
   data: () => ({
     form: {
-      email: 'aaa@aaa.fr',
-      walletAddress: 'yNpShVzMVZip-SpVJ8zeeDyFC-YBv2J4eGD6vZ-9CxwhjpG-nGVqYihcUWij-D5fqNwbwE5wP-GwhpaH7z9BZX-1ekcwyf',
+      email: '',
+      walletAddress: '',
     },
     loading: false,
     status: '',
@@ -99,7 +125,8 @@ export default {
   methods: {
     async submit() {
       if (!new RegExp(this.$options.form.email.pattern).test(this.form.email)) return;
-      if (this.form.walletAddress.length !== this.$options.form.walletAddress.length) return;
+      if (this.form.walletAddress.length < this.$options.form.walletAddress.minlength
+          && this.form.walletAddress.length > this.$options.form.walletAddress.maxlength) return;
 
       this.loading = true;
       this.status = '';
@@ -114,13 +141,13 @@ export default {
       } catch (err) {
         switch (err.error) {
           case 0:
-            this.status = 'The link to get your token has been sent.<br> Please check you email';
+            this.status = 'The link to get your token has been sent. Please check you email';
             break;
           case 10:
             this.status = 'Invalid email or wallet address';
             break;
           case 21:
-            this.status = 'You have already received tokens recently. Come back after 3 days to get more !';
+            this.status = 'You have already received tokens recently. Come back after 3 days to make a new request';
             break;
           default:
             this.status = 'Can\'t connect to the network, try again later';

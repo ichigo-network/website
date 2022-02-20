@@ -71,6 +71,7 @@ module.exports = {
   plugins: [
     plugin(({
       addBase,
+      addUtilities,
     }) => {
       addBase({
         ':root': {
@@ -121,6 +122,38 @@ module.exports = {
           '--color-error-900': colors.rose['900'],
         },
       });
+
+      const animationDelay = {
+        '.animation-delay-75': {
+          'animation-delay': '75ms',
+        },
+        '.animation-delay-100': {
+          'animation-delay': '100ms',
+        },
+        '.animation-delay-150': {
+          'animation-delay': '150ms',
+        },
+        '.animation-delay-200': {
+          'animation-delay': '200ms',
+        },
+        '.animation-delay-300': {
+          'animation-delay': '300ms',
+        },
+        '.animation-delay-500': {
+          'animation-delay': '500ms',
+        },
+        '.animation-delay-600': {
+          'animation-delay': '600ms',
+        },
+        '.animation-delay-700': {
+          'animation-delay': '700ms',
+        },
+        '.animation-delay-1000': {
+          'animation-delay': '1000ms',
+        },
+      };
+
+      addUtilities(animationDelay, ['responsive']);
     }),
   ],
   purge: {
