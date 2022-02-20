@@ -5,7 +5,7 @@
         <nuxt-link
           :to="localePath('index')"
           :aria-label="$t('links.index')"
-          class="inline-block"
+          class="inline-block !text-gray-900"
           @click.native="closeNav()"
         >
           <Logo class="h-10" />

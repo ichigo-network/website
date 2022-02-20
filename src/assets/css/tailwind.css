@@ -51,3 +51,7 @@
 .page-leave-to {
   @apply opacity-0;
 }
+
+.nuxt-link-exact-active {
+  @apply text-primary-500;
+}
