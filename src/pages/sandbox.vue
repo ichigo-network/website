@@ -44,9 +44,9 @@
 
               <div class="flex-grow pt-0.5">
                 <UiLink
+                  :to="localePath('token-faucet')"
                   color="primary"
-                  external
-                  href="https://ichigo.network/faucet/"
+                  tag="nuxt-link"
                 >
                   Get free test token
                 </UiLink>
@@ -67,7 +67,7 @@
                   external
                   href="https://sandbox.ichigo.network/"
                 >
-                  Open sandbox
+                  Go to the sandbox
                 </UiLink>
               </div>
             </div>
