@@ -59,11 +59,11 @@ export default {
           link: 'https://www.reddit.com/r/ichigonetwork',
           external: true,
         },
-        twitter: {
+        telegram: {
           link: 'https://t.me/ichigonetwork',
           external: true,
         },
-        telegram: {
+        twitter: {
           link: 'https://twitter.com/ichigonetwork',
           external: true,
         },
