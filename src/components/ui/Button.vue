@@ -25,7 +25,9 @@
     >
       &#8203;
       <div class="mx-1 w-2 h-2 bg-current rounded-full animate-pulse" />
+      <!-- eslint-disable-next-line tailwindcss/no-custom-classname -->
       <div class="mx-1 w-2 h-2 bg-current rounded-full animate-pulse animation-delay-300" />
+      <!-- eslint-disable-next-line tailwindcss/no-custom-classname -->
       <div class="mx-1 w-2 h-2 bg-current rounded-full animate-pulse animation-delay-600" />
       &#8203;
     </div>

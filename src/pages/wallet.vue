@@ -50,7 +50,7 @@
             The ichigo wallet will help you maintain your account on the ichigo network. It includes 2 important components:
           </p>
 
-          <ol class="ml-5 space-y-2 list-decimal">
+          <ol class="ml-6 space-y-2 list-decimal">
             <li>
               <p>your profile, which represents your identity on the network and allows you to</p>
               <ul class="ml-4 list-disc">
@@ -77,7 +77,7 @@
             Install and use
           </UiHeading>
 
-          <ol class="ml-5 space-y-2 list-decimal">
+          <ol class="ml-6 space-y-2 list-decimal">
             <li>
               <UiLink
                 color="primary"
