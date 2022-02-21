@@ -227,4 +227,18 @@ module.exports = {
     twitter: 'Twitter',
     use: 'Use',
   },
+
+  // tokenomics
+
+  tokenomics: {
+    title: 'Tokenomics',
+    advisors: 'Advisors',
+    communityRewards: 'Community Rewards',
+    crowdsale: 'Crowdsale',
+    development: 'Development',
+    ecosystem: 'Ecosystem',
+    liquidity: 'Liquidity',
+    marketing: 'Marketing',
+    userGrowth: 'User Growth',
+  },
 };
