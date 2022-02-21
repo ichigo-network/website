@@ -3,7 +3,7 @@ module.exports = {
   name: 'ichigo network',
 
   head: {
-    title: 'The first decentralized social ecosystem',
+    title: 'The decentralized social ecosystem',
     description: 'ichigo decentralizes every social media components and place human users at the center of the ecosystem, while removing the need for any intermediate or central authority.',
     keywords: 'web3',
   },
@@ -25,12 +25,8 @@ module.exports = {
   // ecosystem
 
   ecosystem: {
-    title: 'ichigo ecosystem',
-    description: {
-      0: '@:name achieves to recreate social interactions ecosystem without the needs of a central authority and remove the powerful middle-men.',
-      1: 'Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes.',
-      2: 'It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actors equitably, including end-users, content creators, application providers and so on.',
-    },
+    title: 'End-to-end decentralized ecosystem',
+    description: 'ichigo network aims to create social interactions ecosystem without the needs of a central authority and remove the powerful middle-men. Using a layered architecture it proposes a fully decentralized approach and delegates control to its community and a network of trustless nodes. It rewards all contributions to the ecosystem fairly and distributes financial incentives to every actor equitably, including end-users, content creators, application providers, etc.',
     advertisingMarketplace: 'Advertising marketplace',
     applicationLayer: 'Application layer',
     blockchain: 'Blockchain',
@@ -161,8 +157,8 @@ module.exports = {
   // index
 
   index: {
-    heroTitle: 'The first decentralized social ecosystem',
-    heroDescription: 'ichigo is a protocol relying on blockchain and peer-to-peer technologies to decentralize every social media components and place human users at the center of the ecosystem, while removing the needs for any intermediate or central authority.',
+    heroTitle: 'The decentralized social ecosystem',
+    heroDescription: 'All social media components remade for the community to finally thrive in a fair digital world.',
     catchphrase: 'A new social ecosystem without gatekeepers or intermediaries where people can finally thrive in a fair digital world',
     roadmap: {
       title: 'Roadmap',

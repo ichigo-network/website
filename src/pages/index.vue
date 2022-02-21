@@ -54,12 +54,8 @@
             {{ $t('ecosystem.title') }}
           </UiHeading>
 
-          <p
-            v-for="sentence, key in $t('ecosystem.description')"
-            :key="key"
-            class="pt-6 text-gray-700"
-          >
-            {{ $t(`ecosystem.description[${key}]`) }}
+          <p class="pt-6 text-gray-700">
+            {{ $t('ecosystem.description') }}
           </p>
         </div>
       </div>
