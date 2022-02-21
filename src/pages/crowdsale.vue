@@ -22,7 +22,7 @@
                 class="pb-10 lg:pb-48"
                 :level="2"
               >
-                Until crowdsale starts
+                Crowdsale will start on {{ $d(new Date('2022-03-15'), 'monthDay') }}
               </UiHeading>
 
               <Countdown

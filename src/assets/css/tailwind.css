@@ -28,7 +28,7 @@
   }
 
   body {
-    @apply min-h-full selection:bg-gray-900 selection:text-primary-400 dark:selection:bg-primary-400 dark:selection:text-gray-50;
+    @apply min-h-full selection:bg-gray-900 selection:text-primary-400 dark:selection:bg-primary-300 dark:selection:text-gray-50;
   }
 
   :lang(ja-Jp) {
