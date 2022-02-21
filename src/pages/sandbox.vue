@@ -75,7 +75,9 @@
         </div>
       </div>
 
-      <UiDivider class="py-10" />
+      <div class="py-10">
+        <UiDivider />
+      </div>
 
       <div class="grid lg:grid-cols-2">
         <div>

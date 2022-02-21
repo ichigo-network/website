@@ -89,7 +89,9 @@
         </div>
       </div>
 
-      <UiDivider class="py-10" />
+      <div class="py-10">
+        <UiDivider />
+      </div>
     </LayoutContainer>
 
     <CallToAction />

@@ -191,38 +191,45 @@
       </div>
     </div>
 
-    <LayoutContainer class="py-24 mx-auto max-w-lg">
-      <UiHeading class="pb-10">
+    <LayoutContainer class="py-24 mx-auto space-y-10 max-w-lg">
+      <UiHeading>
         {{ $t('tokenomics.title') }}
       </UiHeading>
 
-      <div
-        v-for="item, key in {
-          communityRewards: { percentage: 36 },
-          development: { percentage: 25 },
-          userGrowth: { percentage: 20 },
-          crowdsale: { percentage: 8 },
-          ecosystem: { percentage: 6 },
-          liquidity: { percentage: 3 },
-          marketing: { percentage: 3 },
-          advisors: { percentage: 2 },
-        }"
-        :key="key"
-        class="py-2"
-      >
-        <div class="flex relative items-center py-1">
-          <div
-            class="absolute left-0 z-[-1] w-9 h-full bg-gray-100"
-            :style="{ width: `${item.percentage}%` }"
-          />
+      <p class="text-gray-700">
+        {{ $t('tokenomics.description') }}
+      </p>
 
-          <div class="flex-grow pl-2 text-xl">
-            {{ $t(`tokenomics.${key}`) }}
-          </div>
+      <div>
+        <div
+          v-for="item, key in {
+            communityRewards: { percentage: 35 },
+            development: { percentage: 20 },
+            userGrowth: { percentage: 20 },
+            crowdsale: { percentage: 7 },
+            ecosystem: { percentage: 6 },
+            liquidity: { percentage: 5 },
+            marketing: { percentage: 5 },
+            advisors: { percentage: 2 },
+          }"
+          :key="key"
+          class="py-2"
+        >
+          <div class="flex relative items-center py-1">
+            <UiDivider
+              class="absolute left-0 z-[-1] bg-gray-100"
+              height="full"
+              :style="{ width: `${item.percentage}%` }"
+            />
 
-          <div class="w-16 text-right">
-            <span class="inline-block text-xl">{{ item.percentage }}</span>
-            <span class="text-gray-400">%</span>
+            <div class="flex-grow pl-2 text-xl">
+              {{ $t(`tokenomics.${key}`) }}
+            </div>
+
+            <div class="w-16 text-right">
+              <span class="inline-block text-xl">{{ item.percentage }}</span>
+              <span class="text-gray-400">%</span>
+            </div>
           </div>
         </div>
       </div>

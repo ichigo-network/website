@@ -64,7 +64,9 @@
         </div>
       </div>
 
-      <UiDivider class="py-10" />
+      <div class="py-10">
+        <UiDivider />
+      </div>
 
       <div class="grid lg:grid-cols-2">
         <div>
@@ -152,7 +154,9 @@
         </div>
       </div>
 
-      <UiDivider class="py-10" />
+      <div class="py-10">
+        <UiDivider />
+      </div>
 
       <div class="grid sm:grid-cols-2 gap-16 lg:gap-0">
         <div class="sm:pr-10">
@@ -212,7 +216,9 @@
         </div>
       </div>
 
-      <UiDivider class="py-10" />
+      <div class="py-10">
+        <UiDivider />
+      </div>
     </LayoutContainer>
 
     <CallToAction />

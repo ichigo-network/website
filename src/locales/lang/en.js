@@ -232,6 +232,7 @@ module.exports = {
 
   tokenomics: {
     title: 'Tokenomics',
+    description: 'Tokens are distributed as follow for each activity',
     advisors: 'Advisors',
     communityRewards: 'Community Rewards',
     crowdsale: 'Crowdsale',

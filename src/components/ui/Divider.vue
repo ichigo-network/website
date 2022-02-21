@@ -1,14 +1,16 @@
 <template>
-  <div>
-    <div
-      ref="target"
-      :class="[
-        'h-px bg-gray-900 transition-transform duration-700 origin-left',
-        inView ? 'scale-x-100' : 'scale-x-0',
-      ]"
-    >
-      <slot />
-    </div>
+  <div
+    ref="target"
+    :class="[
+      'bg-gray-900 transition-transform duration-700 origin-left',
+      inView ? 'scale-x-100' : 'scale-x-0',
+      {
+        'h-px': height === 'px',
+        'h-full': height === 'full',
+      },
+    ]"
+  >
+    <slot />
   </div>
 </template>
 
@@ -17,9 +19,13 @@ let observer;
 
 export default {
   props: {
-    once: {
-      type: Boolean,
-      default: true,
+    height: {
+      default: 'px',
+      type: String,
+      validator: (value) => [
+        'px',
+        'full',
+      ].includes(value),
     },
   },
 

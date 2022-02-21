@@ -23,7 +23,6 @@
 export default {
   props: {
     color: {
-      // default: this.status ? null : 'primary',
       default: 'primary',
       type: String,
       validator: (value) => [
