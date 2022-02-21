@@ -152,6 +152,10 @@ module.exports = {
   footer: {
     license: 'Non-exclusive community {year}, @:name',
     rights: 'All rights publicly available.',
+    theme: {
+      dark: 'Dark',
+      light: 'Light',
+    },
   },
 
   // index

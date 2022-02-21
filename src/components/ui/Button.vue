@@ -2,8 +2,8 @@
   <component
     :is="tag"
     :class="[
-      `bg-primary-300 inline-block shadow-lg focus:ring-1 focus:ring-primary-500 focus:outline-none rounded-sm hover:bg-primary-400 font-normal
-transition-colors active:bg-primary-300 relative dark:text-gray-50`,
+      `!text-gray-900 bg-primary-300 inline-block shadow-lg focus:ring-1 focus:ring-primary-500 focus:outline-none rounded-sm hover:bg-primary-400 font-normal
+transition-colors active:bg-primary-300 relative dark:!text-gray-50`,
       {
         // loading
         'cursor-wait': loading,

@@ -4,6 +4,7 @@ specifiers:
   '@babel/eslint-parser': ^7.16.3
   '@commitlint/cli': ^16.2.1
   '@commitlint/config-conventional': ^16.2.1
+  '@nuxtjs/color-mode': ^2.1.1
   '@nuxtjs/eslint-config': ^8.0.0
   '@nuxtjs/eslint-module': ^3.0.2
   '@nuxtjs/i18n': ^7.0.3
@@ -47,6 +48,7 @@ devDependencies:
   '@babel/eslint-parser': 7.17.0_eslint@8.9.0
   '@commitlint/cli': 16.2.1
   '@commitlint/config-conventional': 16.2.1
+  '@nuxtjs/color-mode': 2.1.1
   '@nuxtjs/eslint-config': 8.0.0_eslint@8.9.0
   '@nuxtjs/eslint-module': 3.0.2_eslint@8.9.0+webpack@4.46.0
   '@nuxtjs/stylelint-module': 4.1.0_stylelint@14.5.1+webpack@4.46.0
@@ -1901,6 +1903,13 @@ packages:
       - webpack-cli
       - webpack-command
     dev: false
+
+  /@nuxtjs/color-mode/2.1.1:
+    resolution: {integrity: sha512-kGB/FoICF4RwZkfNBhL/yGrHfaUFpviYq6HGvSkZEm2dCpjRXIv9VsWoP0uzwxnoaRAQQOkkWjaGv/nSk0gUSQ==}
+    dependencies:
+      defu: 5.0.1
+      lodash.template: 4.5.0
+    dev: true
 
   /@nuxtjs/eslint-config/8.0.0_eslint@8.9.0:
     resolution: {integrity: sha512-NuZSiMdSCuBukwWgmNQuMYoA/jgL9SLfecOurUUQw/1QTcD0YKh0RxY4h9rNJB2jkfayzmZ+Y11hlOml40FVvw==}
@@ -6324,7 +6333,6 @@ packages:
 
   /lodash._reinterpolate/3.0.0:
     resolution: {integrity: sha1-DM8tiRZq8Ds2Y8eWU4t1rG4RTZ0=}
-    dev: false
 
   /lodash.debounce/4.0.8:
     resolution: {integrity: sha1-gteb/zCmfEAF/9XiUVMArZyk168=}
@@ -6346,13 +6354,11 @@ packages:
     dependencies:
       lodash._reinterpolate: 3.0.0
       lodash.templatesettings: 4.2.0
-    dev: false
 
   /lodash.templatesettings/4.2.0:
     resolution: {integrity: sha512-stgLz+i3Aa9mZgnjr/O+v9ruKZsPsndy7qPZOchbqk2cnTU1ZaldKK+v7m54WoKIyxiuMZTKT2H81F8BeAc3ZQ==}
     dependencies:
       lodash._reinterpolate: 3.0.0
-    dev: false
 
   /lodash.topath/4.5.2:
     resolution: {integrity: sha1-NhY1Hzu6YZlKCTGYlmC9AyVP0Ak=}

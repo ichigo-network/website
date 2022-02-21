@@ -10,6 +10,24 @@
             <br>
             {{ $t('footer.rights') }}
           </p>
+
+          <div>
+            <UiToggle
+              v-model="isDarkTheme"
+              size="sm"
+              @change="switchTheme()"
+            >
+              <div class=" overflow-hidden">
+                <UiTransitionTranslateY
+                  mode="out-in"
+                >
+                  <div :key="$colorMode.value">
+                    {{ $t(`footer.theme.${$colorMode.value}`) }}
+                  </div>
+                </UiTransitionTranslateY>
+              </div>
+            </UiToggle>
+          </div>
         </div>
 
         <ul
@@ -61,6 +79,20 @@ import Logo from '~/assets/svg/logo.svg?inline';
 export default {
   components: {
     Logo,
+  },
+
+  data: () => ({
+    isDarkTheme: false,
+  }),
+
+  mounted() {
+    this.isDarkTheme = this.$colorMode.value === 'dark';
+  },
+
+  methods: {
+    switchTheme() {
+      this.$colorMode.preference = this.isDarkTheme ? 'dark' : 'light';
+    },
   },
 };
 </script>
