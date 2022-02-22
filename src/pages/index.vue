@@ -1,6 +1,9 @@
 <template>
   <div>
-    <LayoutMain class="grid lg:grid-cols-2 lg:h-screen">
+    <LayoutMain
+      class="grid lg:grid-cols-2 lg:h-screen"
+      type="hero"
+    >
       <div class="flex flex-col order-2 sm:order-1 justify-center p-6 lg:p-10">
         <div class="mx-auto max-w-2xl">
           <UiHeading>
