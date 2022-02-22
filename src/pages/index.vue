@@ -30,8 +30,8 @@
         </div>
       </div>
 
-      <div class="order-1 sm:order-2">
-        <div class="overflow-hidden h-96 sm:h-full bg-gray-900">
+      <div class="overflow-hidden order-1 sm:order-2">
+        <div class="h-96 lg:h-full bg-gray-900">
           <heroIllustration class="block w-full h-full" />
         </div>
       </div>
