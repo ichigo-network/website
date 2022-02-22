@@ -1,6 +1,6 @@
 <template>
   <div>
-    <LayoutMain class="grid lg:grid-cols-2 h-screen">
+    <LayoutMain class="grid lg:grid-cols-2 lg:h-screen">
       <div class="flex flex-col order-2 sm:order-1 justify-center p-6 lg:p-10">
         <div class="mx-auto max-w-2xl">
           <UiHeading>
@@ -30,8 +30,10 @@
         </div>
       </div>
 
-      <div class="order-1 sm:order-2 px-4 sm:px-0">
-        <div class="h-48 sm:h-full bg-gray-900" />
+      <div class="order-1 sm:order-2">
+        <div class="overflow-hidden h-96 sm:h-full bg-gray-900">
+          <heroIllustration class="block w-full h-full" />
+        </div>
       </div>
     </LayoutMain>
 
@@ -391,7 +393,13 @@
 </template>
 
 <script>
+import heroIllustration from '~/assets/svg/hero.svg?inline';
+
 export default {
+  components: {
+    heroIllustration,
+  },
+
   head() {
     return {
       title: this.$t('name'),

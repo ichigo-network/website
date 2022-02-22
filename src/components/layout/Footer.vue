@@ -1,7 +1,7 @@
 <template>
   <footer class="pt-10">
-    <div class="py-24 px-4 sm:px-10 border-t border-gray-50">
-      <div class="flex flex-col sm:flex-row gap-14">
+    <div class="py-24 px-4 lg:px-10 border-t border-gray-50">
+      <div class="flex flex-col lg:flex-row gap-14">
         <div class="flex flex-col flex-grow gap-4">
           <Logo />
 
@@ -33,7 +33,7 @@
         <ul
           v-for="section, sectionKey in $config.nav"
           :key="sectionKey"
-          class="grid sm:flex sm:flex-col grid-cols-2 gap-4 sm:gap-6"
+          class="grid lg:flex lg:flex-col grid-cols-2 gap-4 lg:gap-6"
         >
           <li class="col-span-2 text-gray-500">
             {{ $t(`links.${sectionKey}`) }}
