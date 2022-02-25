@@ -140,7 +140,7 @@ export default {
 
   tailwindcss: {
     configPath: '../tailwind.config.js',
-    exposeConfig: false,
+    viewer: false,
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules

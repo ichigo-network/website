@@ -68,6 +68,25 @@ module.exports = {
         '"MS Gothic"', 'hirakakupron-w3', 'TakaoExゴシック', 'takaoexgothic', 'MotoyaLCedar', '"Droid Sans Japanese"', 'sans-serif',
       ],
     },
+    extend: {
+      animation: {
+        wave: 'wave 5s infinite',
+      },
+      keyframes: {
+        wave: {
+          '0%': {
+            transform: 'scale(1)',
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0.1',
+          },
+          '100%': {
+            opacity: '1',
+          },
+        },
+      },
+    },
   },
   plugins: [
     plugin(({
@@ -142,11 +161,26 @@ module.exports = {
       });
 
       const animationDelay = {
+        '.animation-delay-100': {
+          'animation-delay': '100ms',
+        },
+        '.animation-delay-200': {
+          'animation-delay': '200ms',
+        },
         '.animation-delay-300': {
           'animation-delay': '300ms',
         },
+        '.animation-delay-400': {
+          'animation-delay': '400ms',
+        },
         '.animation-delay-600': {
           'animation-delay': '600ms',
+        },
+        '.animation-delay-700': {
+          'animation-delay': '700ms',
+        },
+        '.animation-delay-800': {
+          'animation-delay': '800ms',
         },
       };
 
@@ -155,7 +189,7 @@ module.exports = {
   ],
   purge: {
     content: [
-      './src/**/*.{vue}',
+      './src/**/*.{vue,svg}',
     ],
     safelist: [
       'dark-mode',
