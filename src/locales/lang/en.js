@@ -22,6 +22,14 @@ module.exports = {
     viewAll: 'View all',
   },
 
+  // crowdsale
+
+  crowdsale: {
+    title: 'Public Crowdsale',
+    description: 'Become an early adopter of the first decentralized social ecosystem. Join in the crowdsale for its monetary incentives and enjoy early access to a new digital world. Ichigo is community-based project. This is the first ever offering for the ichigo token and it is accessible publicly to anyone. There were no prior private sales or institutional investors. This means there will be no "whales" owning huge amount of tokens.',
+    crowdsaleStartOn: 'Crowdsale will start on {date}',
+  },
+
   // ecosystem
 
   ecosystem: {

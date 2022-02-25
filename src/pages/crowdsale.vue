@@ -4,14 +4,11 @@
       <div class="grid lg:grid-cols-2 gap-10 items-center sm:py-24">
         <div>
           <UiHeading class="pb-10">
-            Public Crowdsale
+            {{ $t("crowdsale.title") }}
           </UiHeading>
 
           <p class="text-gray-700">
-            Become an early adopter of the first decentralized social ecosystem.
-            Join in the crowdsale for its monetary incentives and enjoy early access to a new digital world. Ichigo is community-based project.
-            This is the first ever offering for the ichigo token and it is accessible publicly to anyone.
-            There were no prior private sales or institutional investors. This means there will be no "whales" owning huge amount of tokens.
+            {{ $t("crowdsale.description") }}
           </p>
         </div>
 
@@ -22,7 +19,7 @@
                 class="pb-10 lg:pb-48"
                 :level="2"
               >
-                Crowdsale will start on {{ $d(new Date('2022-03-15'), 'monthDay') }}
+                {{ $t("crowdsale.crowdsaleStartOn", { date: $d(new Date('2022-03-15'), 'monthDay') }) }}
               </UiHeading>
 
               <Countdown
