@@ -70,19 +70,15 @@ module.exports = {
     },
     extend: {
       animation: {
-        wave: 'wave 5s infinite',
+        fade: 'fade 5s infinite',
       },
       keyframes: {
-        wave: {
-          '0%': {
-            transform: 'scale(1)',
+        fade: {
+          '0%, 100%': {
             opacity: '1',
           },
           '50%': {
             opacity: '0.1',
-          },
-          '100%': {
-            opacity: '1',
           },
         },
       },

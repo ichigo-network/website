@@ -16,11 +16,11 @@
 <line x1="675.5" y1="166" x2="675.5" y2="202" stroke="#FAFAFA"/>
 <path d="M591.5 184H503.5C486.931 184 473.5 197.431 473.5 214V271C473.5 287.569 460.069 301 443.5 301H442" stroke="#FAFAFA"/>
 <line x1="691" y1="184.5" x2="676" y2="184.5" stroke="#FAFAFA"/>
-<circle cx="364.5" cy="371.5" r="223" stroke="#FAFAFA" class="animate-wave origin-center animation-delay-800"/>
-<circle cx="364.5" cy="371.5" r="163" stroke="#FAFAFA" class="animate-wave origin-center animation-delay-600"/>
-<circle cx="364.5" cy="371.5" r="113" stroke="#FAFAFA" class="animate-wave origin-center animation-delay-400"/>
-<circle cx="364.5" cy="371.5" r="73" stroke="#FAFAFA" class="animate-wave origin-center animation-delay-200"/>
-<circle cx="364.5" cy="371.5" r="43" stroke="#FAFAFA" class="animate-wave origin-center"/>
+<circle cx="364.5" cy="371.5" r="223" stroke="#FAFAFA" class="animate-fade origin-center animation-delay-800"/>
+<circle cx="364.5" cy="371.5" r="163" stroke="#FAFAFA" class="animate-fade origin-center animation-delay-600"/>
+<circle cx="364.5" cy="371.5" r="113" stroke="#FAFAFA" class="animate-fade origin-center animation-delay-400"/>
+<circle cx="364.5" cy="371.5" r="73" stroke="#FAFAFA" class="animate-fade origin-center animation-delay-200"/>
+<circle cx="364.5" cy="371.5" r="43" stroke="#FAFAFA" class="animate-fade origin-center"/>
 <rect x="64.5" y="132.5" width="215" height="136" fill="#18181B" stroke="#FAFAFA"/>
 <circle cx="85.5" cy="168.5" r="10" fill="#FAFAFA" stroke="#FAFAFA"/>
 <rect x="113.5" y="172.5" width="117" height="74" fill="#18181B" stroke="#FAFAFA"/>
