@@ -4,14 +4,13 @@
       <div class="grid lg:grid-cols-2 gap-10 items-center sm:py-24">
         <div class="mx-auto space-y-10 max-w-2xl">
           <UiHeading>
-            Token faucet for testnet
+            {{ $t('tokenFaucet.title') }}
           </UiHeading>
 
           <p class="text-gray-700">
-            This faucet is for test purpose only.
+            {{ $t('tokenFaucet.testPurposeOnly') }}
             <br>
-            It emits test token minted on the Solana Devnet
-            $ICHIGO test token will have no value on the Mainnet
+            {{ $t('tokenFaucet.description') }}
           </p>
         </div>
 
@@ -30,9 +29,9 @@
                   />
                 </div>
 
-                <p>Token request link sent to your email address.</p>
+                <p>{{ $t('tokenFaucet.tokenSentToEmail') }}</p>
 
-                <p>A new request can be made in 3 days.</p>
+                <p>{{ $t('tokenFaucet.tokenSentToEmail', { day: $options.form.dayRequestDelay }) }}</p>
               </div>
 
               <form
@@ -43,24 +42,24 @@
               >
                 <UiInput
                   v-model="form.email"
+                  :pattern="$options.form.email.pattern"
+                  :placeholder="$t('form.email.placeholder')"
                   name="email"
-                  placeholder="Your email address"
                   required
                   type="email"
-                  :pattern="$options.form.email.pattern"
                 >
-                  Email
+                  {{ $t('form.email.label') }}
                 </UiInput>
 
                 <UiTextarea
                   v-model="form.walletAddress"
                   :maxlength="$options.form.walletAddress.maxlength"
                   :minlength="$options.form.walletAddress.minlength"
-                  name="walletAddress"
-                  placeholder="Your wallet address"
+                  :placeholder="$t('form.walletAddress.placeholder')"
                   :resize="false"
+                  name="walletAddress"
                 >
-                  Wallet address
+                  {{ $t('form.walletAddress.label') }}
                 </UiTextarea>
 
                 <UiButton
@@ -68,7 +67,7 @@
                   size="form"
                   :loading="loading"
                 >
-                  Request token
+                  {{ $t('form.actions.requestToken') }}
                 </UiButton>
 
                 <UiTransitionFade mode="out-in">
@@ -81,7 +80,7 @@
                 </UiTransitionFade>
 
                 <p class="text-sm font-light text-gray-500">
-                  Eligible for 45 ichigo tokens every 3 days. We do not store your email address.
+                  {{ $t('tokenFaucet.formCondition', { day: $options.form.dayRequestDelay, ichigo: $options.form.tokenAmount }) }}
                 </p>
               </form>
             </UiTransitionFade>
@@ -104,6 +103,8 @@ export default {
     email: {
       pattern: '[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,12}$',
     },
+    dayRequestDelay: 3,
+    tokenAmount: 45,
     walletAddress: {
       minlength: 42,
       maxlength: 45,

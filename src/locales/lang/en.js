@@ -144,13 +144,28 @@ module.exports = {
   },
 
   // footer
-
   footer: {
     license: 'Non-exclusive community {year}, @:name',
     rights: 'All rights publicly available.',
     theme: {
       dark: 'Dark',
       light: 'Light',
+    },
+  },
+
+  // form
+
+  form: {
+    actions: {
+      requestToken: 'Request token',
+    },
+    email: {
+      label: 'Email',
+      placeholder: 'Your email address',
+    },
+    walletAddress: {
+      label: 'Wallet address',
+      placeholder: 'Your wallet address',
     },
   },
 
@@ -226,6 +241,17 @@ module.exports = {
     tokenFaucet: 'Token faucet',
     twitter: 'Twitter',
     use: 'Use',
+  },
+
+  // tokenFaucet
+
+  tokenFaucet: {
+    title: 'Token faucet for testnet',
+    testPurposeOnly: 'This faucet is for test purpose only.',
+    description: 'It emits test token minted on the Solana Devnet $ICHIGO test token will have no value on the Mainnet.',
+    tokenSentToEmail: 'Token request link sent to your email address.',
+    newRequestInDay: 'A new request can be made in {day} days.',
+    formCondition: 'Eligible for {ichigo} ichigo tokens every {day} days. We do not store your email address.',
   },
 
   // tokenomics
