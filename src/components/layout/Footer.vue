@@ -10,23 +10,43 @@
             <br>
             {{ $t('footer.rights') }}
           </p>
-
-          <div>
-            <UiToggle
-              v-model="isDarkTheme"
-              size="sm"
-              @change="switchTheme()"
+          <div class="flex gap-4 items-center">
+            <div
+              v-if="Object.keys($i18n.locales).length > 1"
+              class="w-32"
             >
-              <div class=" overflow-hidden">
-                <UiTransitionTranslateY
-                  mode="out-in"
+              <UiSelect
+                v-model="currentLocale"
+                size="sm"
+                @select="switchLocale()"
+              >
+                <option
+                  v-for="locale in $i18n.locales"
+                  :key="locale.code"
+                  :value="locale.code"
                 >
-                  <div :key="$colorMode.value">
-                    {{ $t(`footer.theme.${$colorMode.value}`) }}
-                  </div>
-                </UiTransitionTranslateY>
-              </div>
-            </UiToggle>
+                  {{ locale.name }}
+                </option>
+              </UiSelect>
+            </div>
+
+            <div>
+              <UiToggle
+                v-model="isDarkTheme"
+                size="sm"
+                @change="switchTheme()"
+              >
+                <div class=" overflow-hidden">
+                  <UiTransitionTranslateY
+                    mode="out-in"
+                  >
+                    <div :key="$colorMode.value">
+                      {{ $t(`footer.theme.${$colorMode.value}`) }}
+                    </div>
+                  </UiTransitionTranslateY>
+                </div>
+              </UiToggle>
+            </div>
           </div>
         </div>
 
@@ -82,14 +102,20 @@ export default {
   },
 
   data: () => ({
+    currentLocale: '',
     isDarkTheme: false,
   }),
 
   mounted() {
+    this.currentLocale = this.$i18n.locale;
     this.isDarkTheme = this.$colorMode.value === 'dark';
   },
 
   methods: {
+    switchLocale() {
+      this.$router.push(this.switchLocalePath(this.currentLocale));
+    },
+
     switchTheme() {
       this.$colorMode.preference = this.isDarkTheme ? 'dark' : 'light';
     },

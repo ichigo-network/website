@@ -5,7 +5,7 @@ export default {
     {
       code: 'en',
       iso: 'en-US',
-      name: 'EN',
+      name: 'English',
       file: 'lang/en.js',
     },
   ],

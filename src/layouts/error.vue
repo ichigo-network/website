@@ -1,6 +1,6 @@
 <template>
   <LayoutMain class="pr-4 sm:pr-0 pl-4 sm:pl-24 h-screen">
-    <div class="p-10 sm:p-16 h-full text-gray-50 bg-gray-900">
+    <div class="p-10 sm:p-16 h-full dark:text-gray-50 bg-secondary-400">
       <div class="max-w-3xl">
         <UiHeading class="pb-24">
           <template v-if="error.statusCode === 404">
@@ -14,7 +14,7 @@
 
         <nuxt-link
           :to="localePath('index')"
-          class="p-4 text-lg hover:text-primary-400 rounded border border-gray-50 transition-colors"
+          class="p-4 text-lg rounded border border-current hover:opacity-80 transition-colors"
         >
           {{ $t('error.goHome') }}
         </nuxt-link>
