@@ -4,11 +4,11 @@
       <div class="grid lg:grid-cols-2 gap-10 items-center sm:py-24">
         <div>
           <UiHeading class="pb-10">
-            {{ $t("crowdsale.title") }}
+            {{ $t('crowdsale.title') }}
           </UiHeading>
 
           <p class="text-gray-700">
-            {{ $t("crowdsale.description") }}
+            {{ $t('crowdsale.description') }}
           </p>
         </div>
 
@@ -19,7 +19,7 @@
                 class="pb-10 lg:pb-48"
                 :level="2"
               >
-                {{ $t("crowdsale.crowdsaleStartOn", { date: $d(new Date('2022-03-15'), 'monthDay') }) }}
+                {{ $t('crowdsale.crowdsaleStartOn', { date: $d(new Date('2022-03-15'), 'monthDay') }) }}
               </UiHeading>
 
               <Countdown
@@ -30,19 +30,19 @@
                 <div
                   v-for="countdown in [
                     {
-                      unit: 'days',
+                      unit: $tc('dateTime.day', 2),
                       count: days,
                     },
                     {
-                      unit: 'hour',
+                      unit: $tc('dateTime.hour', 2),
                       count: hours,
                     },
                     {
-                      unit: 'minutes',
+                      unit: $tc('dateTime.minute', 2),
                       count: minutes,
                     },
                     {
-                      unit: 'seconds',
+                      unit: $tc('dateTime.second', 2),
                       count: seconds,
                     },
                   ]"
@@ -51,6 +51,7 @@
                   <div class="text-4xl sm:text-5xl">
                     {{ countdown.count }}
                   </div>
+
                   <div class="font-light">
                     {{ countdown.unit }}
                   </div>
@@ -72,82 +73,37 @@
               :level="2"
               class="pb-10 lg:pb-0"
             >
-              Token Utility
+              {{ $t('crowdsale.tokenUtility.title') }}
             </UiHeading>
           </div>
         </div>
 
         <div class="space-y-6 max-w-2xl">
           <p>
-            The ichigo token is used to settle transactions and create monetary incentives in the network.
+            {{ $t('crowdsale.tokenUtility.description') }}
           </p>
 
-          <UiHeading
-            :level="3"
+          <section
+            v-for="key in [
+              'nodeRegistrationAndStaking',
+              'securityAndDeflation',
+              'transactionSettlement',
+              'decentralizedAdvertisement',
+              'attentionAndContentCreation'
+            ]"
+            :key="key"
             class="pt-4"
           >
-            Node Registration and Staking
-          </UiHeading>
+            <UiHeading
+              :level="3"
+            >
+              {{ $t(`crowdsale.tokenUtility.${key}.title`) }}
+            </UiHeading>
 
-          <p>
-            Nodes stake token as collateral before they can join the network.
-            In order to provide storage, a proportional size of stake is needed.
-            The more storage a node wants to store the more token they need to stake.
-            Node reputation plays also an important part to win flash storage agreement.
-          </p>
-
-          <UiHeading
-            :level="3"
-            class="pt-4"
-          >
-            Security and deflation
-          </UiHeading>
-
-          <p>
-            Ichigo network include a reputation system in which each nodes have a score based on their history on the network.
-            Node can also raise their reputation score by staking more token,
-            this means a new node to the network will have to stake more token until they can build-up enough reputation.
-            Regularly a small amount of node stakes will be automatically burnt based on network activity and reward attribute to nodes globally.
-          </p>
-
-          <UiHeading
-            :level="3"
-            class="pt-4"
-          >
-            Transaction settlement
-          </UiHeading>
-
-          <p>
-            Token are used to settle storage fee and network fee by users posting content on the network. Read-only activity is free.
-            This means every transaction between a end-user and a node will occur a fee calculated based on content size and persistency duration,
-            to be paid by end-user.
-          </p>
-
-          <UiHeading
-            :level="3"
-            class="pt-4"
-          >
-            Decentralized advertisement
-          </UiHeading>
-
-          <p>
-            Decentralized advertisement is the key injection of financial incentives in the ecosystem.
-            Transactions on decentralized ad market are settled using the ichigo token which will then
-            be distributed according to the network reward distribution rule.
-          </p>
-
-          <UiHeading
-            :level="3"
-            class="pt-4"
-          >
-            Attention and content creation
-          </UiHeading>
-
-          <p>
-            Application declare their business model on the blockchain, meaning the revshare between end-user,
-            content owner and application. Accordingly end-users receive token as a reward for their attention and content creation.
-            Those token can then be re-used to post more content creating a closed token flow within the ecosystem.
-          </p>
+            <p>
+              {{ $t(`crowdsale.tokenUtility.${key}.description`) }}
+            </p>
+          </section>
         </div>
       </div>
 
@@ -161,13 +117,13 @@
             :level="2"
             class="pb-4 sm:pb-10"
           >
-            Sale Details
+            {{ $t('crowdsale.saleDetails.title') }}
           </UiHeading>
 
           <div class="sm:max-w-lg divide-y divide-gray-300">
             <div class="grid grid-cols-2 py-4">
               <div>
-                Exchange rate
+                {{ $t('common.exchangeRate') }}
               </div>
 
               <div>
@@ -177,21 +133,21 @@
 
             <div class="grid grid-cols-2 py-4">
               <div>
-                Token available for crowdsale
+                {{ $t('crowdsale.saleDetails.tokenAvailableForCrowdsale') }}
               </div>
 
               <div class="font-light text-gray-600">
-                More information coming soon
+                {{ $t('common.moreInformationSoon') }}
               </div>
             </div>
 
             <div class="grid grid-cols-2 py-4">
               <div>
-                Tokenomics
+                {{ $t('tokenomics.title') }}
               </div>
 
               <div class="font-light text-gray-600">
-                More information coming soon
+                {{ $t('common.moreInformationSoon') }}
               </div>
             </div>
           </div>
@@ -202,13 +158,13 @@
             :level="2"
             class="pb-4 sm:pb-10"
           >
-            How it works
+            {{ $t('crowdsale.howItWorks.title') }}
           </UiHeading>
 
           <p class="text-gray-700">
-            The details for the public crowdsale are being worked out at the moment.
+            {{ $t('crowdsale.howItWorks.detailInProgress') }}
             <br>
-            All explanation to join in will be available here on due time.
+            {{ $t('crowdsale.howItWorks.laterExplanation') }}
           </p>
         </div>
       </div>

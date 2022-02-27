@@ -15,8 +15,10 @@ module.exports = {
   // common
 
   common: {
+    exchangeRate: 'Exchange rate',
     getStarted: 'Get started',
     menu: 'Menu',
+    moreInformationSoon: 'More information coming soon',
     readWhitepaper: 'Read whitepaper',
     soon: 'Soon',
     viewAll: 'View all',
@@ -28,6 +30,47 @@ module.exports = {
     title: 'Public Crowdsale',
     description: 'Become an early adopter of the first decentralized social ecosystem. Join in the crowdsale for its monetary incentives and enjoy early access to a new digital world. Ichigo is community-based project. This is the first ever offering for the ichigo token and it is accessible publicly to anyone. There were no prior private sales or institutional investors. This means there will be no "whales" owning huge amount of tokens.',
     crowdsaleStartOn: 'Crowdsale will start on {date}',
+    howItWorks: {
+      title: 'How it works',
+      detailInProgress: 'The details for the public crowdsale are being worked out at the moment.',
+      laterExplanation: 'All explanation to join in will be available here on due time.',
+    },
+    saleDetails: {
+      title: 'Sale Details',
+      exchangeRate: 'Exchange rate',
+      tokenAvailableForCrowdsale: 'Token available for crowdsale',
+    },
+    tokenUtility: {
+      title: 'Token Utility',
+      description: 'The ichigo token is used to settle transactions and create monetary incentives in the network.',
+      attentionAndContentCreation: {
+        title: 'Attention and content creation',
+        description: 'Application declare their business model on the blockchain, meaning the revshare between end-user, content owner and application. Accordingly end-users receive token as a reward for their attention and content creation. Those token can then be re-used to post more content creating a closed token flow within the ecosystem.',
+      },
+      decentralizedAdvertisement: {
+        title: 'Decentralized advertisement',
+        description: 'Decentralized advertisement is the key injection of financial incentives in the ecosystem. Transactions on decentralized ad market are settled using the ichigo token which will then be distributed according to the network reward distribution rule.',
+      },
+      nodeRegistrationAndStaking: {
+        title: 'Node Registration and Staking',
+        description: 'Nodes stake token as collateral before they can join the network. In order to provide storage, a proportional size of stake is needed. The more storage a node wants to store the more token they need to stake. Node reputation plays also an important part to win flash storage agreement.',
+      },
+      securityAndDeflation: {
+        title: 'Security and deflation',
+        description: 'Ichigo network include a reputation system in which each nodes have a score based on their history on the network. Node can also raise their reputation score by staking more token, this means a new node to the network will have to stake more token until they can build-up enough reputation. Regularly a small amount of node stakes will be automatically burnt based on network activity and reward attribute to nodes globally.',
+      },
+      transactionSettlement: {
+        title: 'Transaction settlement',
+        description: 'Token are used to settle storage fee and network fee by users posting content on the network. Read-only activity is free. This means every transaction between a end-user and a node will occur a fee calculated based on content size and persistency duration, to be paid by end-user.',
+      },
+    },
+  },
+
+  dateTime: {
+    day: 'day | days',
+    hour: 'hour | hours',
+    minute: 'minute | minutes',
+    second: 'second | seconds',
   },
 
   // ecosystem
