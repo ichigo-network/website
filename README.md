@@ -39,6 +39,12 @@ Layouts are a great help when you want to change the look and feel of your Nuxt 
 
 More information about the usage of this directory in [the documentation](https://nuxtjs.org/docs/2.x/directory-structure/layouts).
 
+### `locals`
+
+Locals contains all i18n translation files located inside the `lang` folder.
+
+More information about the usage of this directory in [the documentation](https://i18n.nuxtjs.org).
+
 ### `pages`
 
 This directory contains your application views and routes. Nuxt will read all the `*.vue` files inside this directory and setup Vue Router automatically.
