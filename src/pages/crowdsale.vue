@@ -96,6 +96,7 @@
           >
             <UiHeading
               :level="3"
+              class="pb-4"
             >
               {{ $t(`crowdsale.tokenUtility.${key}.title`) }}
             </UiHeading>
