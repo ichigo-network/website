@@ -4,6 +4,7 @@ const MILLISECONDS_MINUTE = 60 * MILLISECONDS_SECOND;
 const MILLISECONDS_HOUR = 60 * MILLISECONDS_MINUTE;
 const MILLISECONDS_DAY = 24 * MILLISECONDS_HOUR;
 const EVENT_VISIBILITY_CHANGE = 'visibilitychange';
+const EVENT_END = 'end';
 
 export default {
   name: 'Countdown',
@@ -215,6 +216,29 @@ export default {
 
       if (document.visibilityState === 'visible') {
         this.continue();
+      }
+    },
+
+    /**
+     * Ends the countdown.
+     * @public
+     * @emits Countdown#end
+     */
+    end() {
+      if (!this.counting) {
+        return;
+      }
+
+      this.pause();
+      this.totalMilliseconds = 0;
+      this.counting = false;
+
+      if (this.emitEvents) {
+        /**
+         * Countdown end event.
+         * @event Countdown#end
+         */
+        this.$emit(EVENT_END);
       }
     },
 

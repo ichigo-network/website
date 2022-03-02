@@ -5,7 +5,7 @@
       'inline-block transition-colors duration-150 ease-in-out',
       {
         // color
-        'hover:text-gray-600': color === 'gray',
+        'hover:opacity-80': color === 'gray',
         'text-primary-500 hover:text-gray-600': color === 'primary',
       },
     ]"

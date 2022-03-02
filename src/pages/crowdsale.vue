@@ -15,48 +15,60 @@
         <div>
           <div class="p-6 sm:p-16 dark:text-gray-50 bg-secondary-400">
             <div class="max-w-2xl">
-              <UiHeading
-                class="pb-10 lg:pb-48"
-                :level="2"
-              >
-                {{ $t('crowdsale.crowdsaleStartOn', { date: $d(new Date('2022-03-15'), 'monthDay') }) }}
-              </UiHeading>
-
-              <Countdown
-                v-slot="{ days, hours, minutes, seconds }"
-                :time="new Date('2022-03-15') - new Date()"
-                class="grid grid-cols-4 gap-4"
-              >
-                <div
-                  v-for="countdown in [
-                    {
-                      unit: $tc('dateTime.day', 2),
-                      count: days,
-                    },
-                    {
-                      unit: $tc('dateTime.hour', 2),
-                      count: hours,
-                    },
-                    {
-                      unit: $tc('dateTime.minute', 2),
-                      count: minutes,
-                    },
-                    {
-                      unit: $tc('dateTime.second', 2),
-                      count: seconds,
-                    },
-                  ]"
-                  :key="countdown.unit"
+              <template v-if="($options.settings.crowdsaleDate - new Date() > 0) && !isCountdownFinish">
+                <UiHeading
+                  class="pb-10 lg:pb-48"
+                  :level="2"
                 >
-                  <div class="text-4xl sm:text-5xl">
-                    {{ countdown.count }}
-                  </div>
+                  {{ $t('crowdsale.crowdsaleStartOn', { date: $d($options.settings.crowdsaleDate, 'monthDay') }) }}
+                </UiHeading>
 
-                  <div class="font-light">
-                    {{ countdown.unit }}
+                <Countdown
+                  v-slot="{ days, hours, minutes, seconds }"
+                  :time="$options.settings.crowdsaleDate - new Date()"
+                  class="grid grid-cols-4 gap-4"
+                  @end="isCountdownFinish = true"
+                >
+                  <div
+                    v-for="countdown in [
+                      {
+                        unit: $tc('dateTime.day', 2),
+                        count: days,
+                      },
+                      {
+                        unit: $tc('dateTime.hour', 2),
+                        count: hours,
+                      },
+                      {
+                        unit: $tc('dateTime.minute', 2),
+                        count: minutes,
+                      },
+                      {
+                        unit: $tc('dateTime.second', 2),
+                        count: seconds,
+                      },
+                    ]"
+                    :key="countdown.unit"
+                  >
+                    <div class="text-4xl sm:text-5xl">
+                      {{ countdown.count }}
+                    </div>
+
+                    <div class="font-light">
+                      {{ countdown.unit }}
+                    </div>
                   </div>
-                </div>
-              </Countdown>
+                </Countdown>
+              </template>
+
+              <template v-else>
+                <UiHeading
+                  class="pb-10 lg:pb-48"
+                  :level="2"
+                >
+                  {{ $t('crowdsale.crowdsaleOpen') }}
+                </UiHeading>
+              </template>
             </div>
           </div>
         </div>
@@ -181,6 +193,14 @@
 
 <script>
 export default {
+  data: () => ({
+    isCountdownFinish: false,
+  }),
+
+  settings: {
+    crowdsaleDate: new Date('2022-03-15'),
+  },
+
   head() {
     return {
       title: this.$t('links.ichigoCrowdsale'),
