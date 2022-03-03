@@ -1,0 +1,194 @@
+const colors = require('tailwindcss/colors');
+const defaultTheme = require('tailwindcss/defaultTheme');
+const plugin = require('tailwindcss/plugin');
+
+module.exports = {
+  mode: 'jit',
+  darkMode: 'class',
+  theme: {
+    boxShadow: {
+      lg: '0 1px 16px 0px rgba(0, 0, 0, 0.05)',
+    },
+    colors: {
+      background: 'var(--color-background)',
+      current: 'currentColor',
+      error: {
+        50: 'var(--color-error-50)',
+        100: 'var(--color-error-100)',
+        200: 'var(--color-error-200)',
+        300: 'var(--color-error-300)',
+        400: 'var(--color-error-400)',
+        500: 'var(--color-error-500)',
+        600: 'var(--color-error-600)',
+        700: 'var(--color-error-700)',
+        800: 'var(--color-error-800)',
+        900: 'var(--color-error-900)',
+      },
+      gray: {
+        50: 'var(--color-gray-50)',
+        100: 'var(--color-gray-100)',
+        200: 'var(--color-gray-200)',
+        300: 'var(--color-gray-300)',
+        400: 'var(--color-gray-400)',
+        500: 'var(--color-gray-500)',
+        600: 'var(--color-gray-600)',
+        700: 'var(--color-gray-700)',
+        800: 'var(--color-gray-800)',
+        900: 'var(--color-gray-900)',
+      },
+      primary: {
+        50: 'var(--color-primary-50)',
+        100: 'var(--color-primary-100)',
+        200: 'var(--color-primary-200)',
+        300: 'var(--color-primary-300)',
+        400: 'var(--color-primary-400)',
+        500: 'var(--color-primary-500)',
+        600: 'var(--color-primary-600)',
+        700: 'var(--color-primary-700)',
+        800: 'var(--color-primary-800)',
+        900: 'var(--color-primary-900)',
+      },
+      secondary: {
+        50: 'var(--color-secondary-50)',
+        100: 'var(--color-secondary-100)',
+        200: 'var(--color-secondary-200)',
+        300: 'var(--color-secondary-300)',
+        400: 'var(--color-secondary-400)',
+        500: 'var(--color-secondary-500)',
+        600: 'var(--color-secondary-600)',
+        700: 'var(--color-secondary-700)',
+        800: 'var(--color-secondary-800)',
+        900: 'var(--color-secondary-900)',
+      },
+      transparent: 'transparent',
+    },
+    fontFamily: {
+      sans: ['Inter', ...defaultTheme.fontFamily.sans],
+      japanese: ['"M PLUS 1p"', '"ヒラギノ角ゴ ProN"', '"Hiragino Kaku Gothic ProN"', '游ゴシック', '游ゴシック体', 'yugothic', '"Yu Gothic"', 'メイリオ', 'meiryo', '"ＭＳ ゴシック"',
+        '"MS Gothic"', 'hirakakupron-w3', 'TakaoExゴシック', 'takaoexgothic', 'MotoyaLCedar', '"Droid Sans Japanese"', 'sans-serif',
+      ],
+    },
+    extend: {
+      animation: {
+        fade: 'fade 5s infinite',
+      },
+      keyframes: {
+        fade: {
+          '0%, 100%': {
+            opacity: '1',
+          },
+          '50%': {
+            opacity: '0.1',
+          },
+        },
+      },
+    },
+  },
+  plugins: [
+    plugin(({
+      addBase,
+      addUtilities,
+    }) => {
+      addBase({
+        ':root': {
+          '--color-background': colors.white,
+
+          '--color-gray-50': colors.gray['50'],
+          '--color-gray-100': colors.gray['100'],
+          '--color-gray-200': colors.gray['200'],
+          '--color-gray-300': colors.gray['300'],
+          '--color-gray-400': colors.gray['400'],
+          '--color-gray-500': colors.gray['500'],
+          '--color-gray-600': colors.gray['600'],
+          '--color-gray-700': colors.gray['700'],
+          '--color-gray-800': colors.gray['800'],
+          '--color-gray-900': colors.gray['900'],
+
+          '--color-primary-50': colors.green['50'],
+          '--color-primary-100': colors.green['100'],
+          '--color-primary-200': colors.green['200'],
+          '--color-primary-300': colors.green['300'],
+          '--color-primary-400': colors.green['400'],
+          '--color-primary-500': colors.green['500'],
+          '--color-primary-600': colors.green['600'],
+          '--color-primary-700': colors.green['700'],
+          '--color-primary-800': colors.green['800'],
+          '--color-primary-900': colors.green['900'],
+
+          '--color-secondary-50': colors.red['50'],
+          '--color-secondary-100': colors.red['100'],
+          '--color-secondary-200': colors.red['200'],
+          '--color-secondary-300': colors.red['300'],
+          '--color-secondary-400': colors.red['400'],
+          '--color-secondary-500': colors.red['500'],
+          '--color-secondary-600': colors.red['600'],
+          '--color-secondary-700': colors.red['700'],
+          '--color-secondary-800': colors.red['800'],
+          '--color-secondary-900': colors.red['900'],
+
+          '--color-error-50': colors.red['50'],
+          '--color-error-100': colors.red['100'],
+          '--color-error-200': colors.red['200'],
+          '--color-error-300': colors.red['300'],
+          '--color-error-400': colors.red['400'],
+          '--color-error-500': colors.red['500'],
+          '--color-error-600': colors.red['600'],
+          '--color-error-700': colors.red['700'],
+          '--color-error-800': colors.red['800'],
+          '--color-error-900': colors.red['900'],
+        },
+      });
+
+      addUtilities({
+        '.dark': {
+          '--color-background': '#111111',
+
+          '--color-gray-50': colors.gray['900'],
+          '--color-gray-100': colors.gray['800'],
+          '--color-gray-200': colors.gray['700'],
+          '--color-gray-300': colors.gray['600'],
+          '--color-gray-400': colors.gray['500'],
+          '--color-gray-500': colors.gray['400'],
+          '--color-gray-600': colors.gray['300'],
+          '--color-gray-700': colors.gray['200'],
+          '--color-gray-800': colors.gray['100'],
+          '--color-gray-900': colors.gray['50'],
+        },
+      });
+
+      const animationDelay = {
+        '.animation-delay-100': {
+          'animation-delay': '100ms',
+        },
+        '.animation-delay-200': {
+          'animation-delay': '200ms',
+        },
+        '.animation-delay-300': {
+          'animation-delay': '300ms',
+        },
+        '.animation-delay-400': {
+          'animation-delay': '400ms',
+        },
+        '.animation-delay-600': {
+          'animation-delay': '600ms',
+        },
+        '.animation-delay-700': {
+          'animation-delay': '700ms',
+        },
+        '.animation-delay-800': {
+          'animation-delay': '800ms',
+        },
+      };
+
+      addUtilities(animationDelay, ['responsive']);
+    }),
+  ],
+  purge: {
+    content: [
+      './src/**/*.{vue,svg}',
+    ],
+    safelist: [
+      'dark-mode',
+    ],
+  },
+};

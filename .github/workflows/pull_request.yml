@@ -1,0 +1,36 @@
+name: Pull Request
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    name: Pull request test
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+        node: [16]
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout 🛎
+        uses: actions/checkout@master
+
+      - name: Setup PNPM 📦
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.25.1
+
+      - name: Setup Node.js ${{ matrix.node-version }} 🏗
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'pnpm'
+
+      - name: Install dependencies 👨🏻‍💻
+        run: pnpm install
+
+      - name: Run linter 👀
+        run: pnpm run lint

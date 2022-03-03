@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-weight: 300;
+    font-family: Inter;
+    font-style: normal;
+    font-display: swap;
+    src:
+      url("~assets/font/Inter-Light.woff2") format("woff2"),
+      url("~assets/font/Inter-Light.woff") format("woff"),
+  }
+
+  @font-face {
+    font-weight: 400;
+    font-family: Inter;
+    font-style: normal;
+    font-display: swap;
+    src:
+      url("~assets/font/Inter-Regular.woff2") format("woff2"),
+      url("~assets/font/Inter-Regular.woff") format("woff"),
+  }
+
+  html {
+    @apply h-full text-gray-900 bg-background;
+  }
+
+  body {
+    @apply min-h-full selection:bg-gray-900 selection:text-primary-400 dark:selection:bg-primary-300 dark:selection:text-gray-50;
+  }
+
+  :lang(ja-Jp) {
+    @apply font-japanese;
+  }
+}
+
+@layer utilities {
+  .scroll-prevent {
+    @apply h-screen overflow-y-hidden fixed lg:h-auto lg:overflow-y-visible lg:static;
+  }
+}
+
+.page-enter-active,
+.page-leave-active {
+  @apply transition-opacity duration-150 ease-in-out;
+}
+
+.page-enter,
+.page-leave-to {
+  @apply opacity-0;
+}
+
+.nuxt-link-exact-active {
+  @apply text-primary-500;
+}

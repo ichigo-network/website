@@ -1,0 +1,19 @@
+[dev]
+   command = "pnpm run dev || ( npm install pnpm && pnpm run dev )"
+
+[build.environment]
+  NPM_FLAGS = "--version"
+
+[build]
+  command = "pnpm run generate || ( npm install pnpm && pnpm run generate )"
+  publish = "dist"
+
+[[redirects]]
+  from = "/js/analytics.js"
+  to = "https://plausible.lecouey.me/js/plausible.js"
+  status = 200
+
+[[redirects]]
+  from = "/api/event"
+  to = "https://plausible.lecouey.me/api/event"
+  status = 202
