@@ -115,6 +115,14 @@ export default {
       { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
     ],
+    script: [
+      {
+        src: '/js/analytics.js',
+        async: true,
+        defer: true,
+        'data-domain': 'ichigo.network',
+      },
+    ],
   },
 
   loading: false,

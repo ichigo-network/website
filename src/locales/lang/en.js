@@ -5,7 +5,7 @@ module.exports = {
   head: {
     title: 'The decentralized social ecosystem',
     description: 'ichigo decentralizes every social media components and place human users at the center of the ecosystem, while removing the need for any intermediate or central authority.',
-    keywords: 'web3',
+    keywords: 'web3, new crypto currency, ico, whitelist, blockchain, japan, crypto, newcoin, cryptocurrency, data security, data security, encryption, social network, defi, solana, sol, decentralized social ecosystem, social ecosystem',
   },
 
   callToAction: {
@@ -66,6 +66,8 @@ module.exports = {
       },
     },
   },
+
+  // date an time format
 
   dateTime: {
     day: 'day | days',
@@ -196,6 +198,7 @@ module.exports = {
   },
 
   // footer
+
   footer: {
     license: 'Non-exclusive community {year}, @:name',
     rights: 'All rights publicly available.',
@@ -295,7 +298,7 @@ module.exports = {
     use: 'Use',
   },
 
-  // tokenFaucet
+  // token faucet
 
   tokenFaucet: {
     title: 'Token faucet for testnet',
